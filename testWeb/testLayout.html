@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+		<style type="text/css">
+			.a{
+				width: 200px;
+				height:200px;
+				background-color: red;
+				margin:100px,auto,100px,auto;
+			}
+			.b{
+				width: 200px;
+				height:200px;
+				background-color: green;
+				/*float:right;*/
+				/*position: fixed;*/
+				right: 200px;
+			}
+			.c{
+				background-color: red;
+				/*float: right;*/
+				margin-right: 20px;
+			}
+			.container{
+				
+			}
+			span{
+				margin-right: 20px;
+			}
+			.important{
+				text-align: left;
+				font-weight: 200;
+				color: red;
+			}
+		</style>
+		<title>New Web Project</title>
+	</head>
+	<!-- html 布局   -->
+	<body>
+		<div class="container">
+			<div class="a">a</div>
+  			<div class="b">b</div>
+		</div>
+		
+  		<span class="c">
+  			<div>1</div>
+  			<span>2</span>
+  			<span>3</span>
+  		</span>
+  		
+  		<div class="important">
+  			       一切皆为框
+				div、h1 或 p 元素常常被称为块级元素。这意味着这些元素显示为一块内容，即“块框”。与之相反，span 和 strong 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“行内框”。
+				您可以使用 display 属性改变生成的框的类型。这意味着，通过将 display 属性设置为 block，可以让行内元素（比如 <a> 元素）表现得像块级元素一样。还可以通过把 display 设置为 none，让生成的元素根本没有框。这样的话，该框及其所有内容就不再显示，不占用文档中的空间。
+				但是在一种情况下，即使没有进行显式定义，也会创建块级元素。这种情况发生在把一些文本添加到一个块级元素（比如 div）的开头。即使没有把这些文本定义为段落，它也会被当作段落对待：
+  		</div>
+	</body>
+</html>
+
