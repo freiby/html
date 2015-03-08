@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>new operator</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+	<script>
+		//console.group("new 操作 js解析器具体做了什么？");
+		var global;
+		var Person = function(name){
+			this.name = name;
+			console.log("执行Person函数");
+			global = this;//记录this指针
+		};
+		console.assert(Person.prototype.constructor === Person);//constructor属性在Person被定义的时候已经确定，new操作并没有设置constructor
+		proto = {
+			age:10,
+			class:3
+		};
+		Person.prototype = proto;
+		
+		var p = new Person();
+		
+		global===p && console.log("1、执行Person函数时候，this指向新建对象");
+		p.__proto__ === Person.prototype && console.log("2、将Person的prototype赋值给新对象的__proto__属性");
+		global===p && console.log("3、返回this对象,如果Person有自己的返回对象(即 return x )，如果x不为基本数据类型，则返回x而不是this对象");
+		
+		//__proto__属性是浏览器内部属性,用于原形链，对象的原形链就是通过这个属性连接的
+		//__proto__属性，对程序开发透明，部分浏览器允许访问
+		//如果浏览器禁止访问__proto__属性，可以为proto加个属性，看p前后变化就知道 p.__proto__是否指向Person.prototype
+		//console.log("p.addr",p.addr);//undefined
+		//proto.addr = "load";
+		//console.log("p.addr",p.addr);//load
+		//console.groupEnd("new 操作 js解析器具体做了什么？");
+	</script>
+  </body>
+</html>

@@ -2,15 +2,15 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>New Web Project</title>
 		<script src="jquery-1.11.2.js"></script>
 		<script  type="text/javascript">
 			// var aQuery = function(selector, context) {
-			        // //构造函数
+			        // //鏋勯�犲嚱鏁�
 			// };
 			// aQuery.prototype = {
-			    // //原型
+			    // //鍘熷瀷
 			    // name:function(){ alert('name'); },
 			    // age:function(){}
 			// };
@@ -20,16 +20,17 @@
 			
 			
 			var aQuery = function(selector, context) {
-			       return new aQuery.prototype.init();
+			       return aQuery.prototype.init();
 			       
 			};
 			
-			aQuery.name = function(){
-				alert(' self name');				
-			};
+			// aQuery.name = function(){
+				// alert(' self name');				
+			// };
 			
 			aQuery.prototype = {
 				init:function(){
+					this.age = 18;
 			        return this;
 			    },
 			    name:function(){
@@ -50,9 +51,10 @@
 			    // age:function(){}
 			// };
 			var t = {};
-			aQuery.prototype.init.prototype = aQuery.prototype;
+			// aQuery.prototype.init.prototype = aQuery.prototype;
 			t = aQuery();
 			t.name();
+			t.age;
 		</script>
 		
 		<script type="text/javascript">
