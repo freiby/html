@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>New Web Project</title>
+		<script src="../jquery-1.11.2.js"></script>
+		<script  type="text/javascript">
+			$(document).ready(function(){
+				$("#right").click(function(){
+				  $(".block").animate({left: '+50px'}, "slow");
+				});
+				
+				$("#left").click(function(){
+				  $(".block").animate({left: '-50px'}, "slow");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>New Web Project Page</h1>
+		
+		
+		<button id="left">«</button> <button id="right">»</button>
+		<div class="block" style="position:relative">hello</div>
+	</body>
+</html>
+
