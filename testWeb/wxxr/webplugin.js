@@ -2,8 +2,11 @@
  * wxxr web plugin 
  */
 var WebPlugin = {
+	
 	init:function(){
 	},
+	
+	currentPage:"",
 	//tab
 	currentSelectedTab:"",
 	initTab:function(region){
