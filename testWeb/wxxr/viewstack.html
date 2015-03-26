@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-1.11.2.js"></script>
+<script src="webplugin.js"></script>
+<link href="viewstack.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="fl-desktop-container" class="fl-desktop-container">
+	<div id="fl-html-header" class="fl-html-header-claz"> 
+		<span> Header </span>
+	</div>
+	<!-- 打开第一个HomePage -->
+	<div id="fl-html-content" class="fl-html-content-claz" >
+		<div id="fl-page-stack-container" class="fl-page-stack-container-claz">
+			<div id="fl-page-container" class="fl-page-container-claz" pageId="">
+				fadfadsfadsfdaf
+			</div>
+		</div>
+	</div>
+	<div id="fl-html-footer" class="fl-html-footer-claz">
+			<span> footer </span>
+	</div>
+</div>
+<script type="text/javascript">
+	WebPlugin.openPage = function(pageId){
+		if(this.currentPage === "" && pageId == "homePage"){
+			var options = {url:"",success:function(){
+				renderTarget("fl-page-stack-container","b");;
+			},target:"aaa"};
+			this.callAjax(options);
+		}
+	};
+</script>
+</body>
