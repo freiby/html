@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title></title>
+<link href="resources/css/ext-all-neptune.css" rel="stylesheet" />
+<script src="ext-debug.js"></script>
+<script src="locale/ext-lang-zh_CN.js"></script>
+<script type="text/javascript">
+	function init() {
+		Ext.Loader.setConfig({
+			enabled : true,
+			disableCaching : false,
+			paths : {
+				App : 'plugins',
+				Ext : 'src/'
+			}
+		});
+
+		Ext.define('testWindow', {
+			extend : 'App.com.wxxr.smlib.Plugin',
+			title : 'My Window',
+			width : 300,
+			height : 200,
+			html : '<h1>Hello,world!</h1>',
+			initComponent : function() {
+				this.callParent();
+			}
+		});
+
+	};
+	
+	function f1(){
+		console.log(this);
+	};
+	
+	function domOperate(){
+		var  test  = Ext.get("container_div");
+		
+		var html = "<div id=\"smlib_container\">"+
+		"	<input type=\'button\' value=\'ok\' onclick=\'ins.hello()\'>"+
+		"	<input type=\'button\' value=\'ok2\' onclick=\'hello2()\'>"+
+		"</div>"+
+		"<script type=\"text/javascript\">"+
+		"	"+
+		"	Ext.define(\'Smlib.com.wxxr.smlib.pluginTest\', {"+
+		"		age:1,"+
+		"		name:\'fdp\',"+
+		"		hello:function(){alert(Ext.get(\'smlib_container\').getHTML());}"+
+		"	});"+
+		"	"+
+		"	var ins = Ext.create(\'Smlib.com.wxxr.smlib.pluginTest\');"+
+		"	"+
+		"	function func(){"+
+		"		console.log(this);"+
+		"	};"+
+		"	this.func();"+
+		"	"+
+		"<\/script>";
+		
+		var element = Ext.DomHelper.overwrite("container_div",html);
+		var container_id_element = Ext.get("container_div").dom;
+		var scripts = container_id_element.getElementsByTagName("script");
+		for(var i=0;i<scripts.length; i++){
+			var script_text = scripts[i].text;
+			var context = {};
+			context.eval = this['eval'];
+			var result = context['eval'].call(context,script_text);
+			var view = this['com_wxxr_smlib_viewtest'];
+			console.log(func);
+			
+		}
+		var context = {a:1};
+		f1();
+		this['f1'].call(context);
+		
+	};
+	
+	Ext.onReady(init);
+	//Ext.require(['App.com.wxxr.smlib.Plugin']);
+</script>
+
+</head>
+<body>
+	<button onclick="domOperate()">Create Window</button>
+	<div id="container_div">
+		container
+	</div>
+</body>
+</html>
