@@ -9,7 +9,16 @@
     <script type="text/javascript">
         $(function () {
             $("#mytabs").tabs();
-        })；
+        });
+       
+        
+        $.extend({
+			min: function(a, b) { return a < b ? a : b; },
+			max: function(a, b) { return a > b ? a : b; }
+		});
+		var jq = $();
+		 console.log(jq);
+		
     </script>
 </head>
 <body>
