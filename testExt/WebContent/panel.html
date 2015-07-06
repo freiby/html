@@ -8,7 +8,7 @@
 <script src="locale/ext-lang-zh_CN.js"></script>
 <script type="text/javascript">
 function init(){
-	Ext.create('Ext.window.Window', {
+	var win = Ext.create('Ext.window.Window', {
 	    title: 'Hello',
 	    height: 200,
 	    width: 400,
@@ -19,7 +19,13 @@ function init(){
 	        columns: [{header: 'World'}],                 // One header just for show. There's no data,
 	        store: Ext.create('Ext.data.ArrayStore', {}) // A dummy empty data store
 	    }
-	}).show();
+	});
+	win.show();
+	
+	console.log(win instanceof Ext.window.Window);
+	
+	
+	
 }
 Ext.onReady(init);
 </script>

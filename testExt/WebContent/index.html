@@ -9,7 +9,20 @@
 	<script src="locale/ext-lang-zh_CN.js"></script>
 	<script type="text/javascript">
         function init() {
-            Ext.MessageBox.alert("ExtJS", "Hello ExtJS");
+            // Ext.MessageBox.alert("ExtJS", "Hello ExtJS");
+            Ext.define("Person",{
+            	name:"",
+            	cc:[]
+            });
+            
+            var fdp = Ext.create("Person");
+            fdp.cc.push("a");
+            var gyj = Ext.create("Person");
+            fdp.name = "fdp";
+            gyj.name = "gyj";
+            gyj.cc.push("b");
+            console.log(fdp.name);
+            console.log(gyj.name);
         }
 		Ext.onReady(init);
     </script>
