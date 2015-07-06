@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<style type="text/css">
+			.pos_abs {
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				left: 100px;
+				top: 150px
+			}
+
+			.pos_abs2 {
+				height: 100px;
+				width: 100px;
+				position: absolute;
+				left: 10px;
+				top: 15px;
+				margin-right: -25px;
+				border: 2px;
+				border-color: #000000;
+				border-style: dashed;
+			}
+
+			.pos_abs3 {
+				height: 20px;
+				float: left;
+			}
+
+			.r {
+				float: left;
+			}
+
+			.color {
+				background-color: red
+			}
+			.color2 {
+				background-color: green
+			}
+			.color3 {
+				background-color: #00ffff
+			}
+			.uiClass{
+				background-color: #CCCCCC;
+				list-style: none;
+				margin: 0px;
+				padding: 0px;
+				/*margin-right: -25px;*/
+				border: 2px;
+				border-color: #000000;
+				border-style: dashed;
+				
+			}
+			.uiClass li{
+				float: left;
+				margin-left: 10px;
+			}
+			
+			
+			
+			.clearfix:after{
+				content: ""; 
+				display: block; 
+				height: 0; 
+			    clear: both; 
+				visibility: hidden;
+			}
+			
+			.clearfix {
+			  /* hasLayout */ 
+			  zoom: 1; 
+			  }
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="pos_abs color">
+			<div class="pos_abs2 color2">
+				<ul class="clearfix uiClass" >
+					<li>aaaa</li>
+					<li>bbbb</li>
+					<li>cccc</li>
+					<li>dddd</li>
+					<li>eeee</li>
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

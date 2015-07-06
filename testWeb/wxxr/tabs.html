@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jquery-1.11.2.js"></script>
+<script src="webplugin.js"></script>
+<link href="tabs.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="tab-nav-wrapper" class="tab-nav-wrapper-claz">
+		<ul id="tab-nav-container" class="tab-nav-container-claz">
+			<li id="tab.nav.item.1" class="tab-nav-item-claz" >
+				<a href="#tabs1">选项1</a>
+			</li>
+			<li id="tab.nav.item-2" class="tab-nav-item-claz">
+				<a href="#tabs1">选项2</a>
+			</li>
+			<li id="tab.nav.item.3" class="tab-nav-item-claz">
+				<a href="#tabs1">选项3</a>
+			</li>
+		</ul>
+	</div>
+	<div id="view-stack-wrapper" class="view-stack-wrapper-claz">
+		<div id="tab.nav.item-1" class="view-stack-item-claz" >
+				1
+		</div>
+		
+		<div id="tab.nav.item.2" class="view-stack-item-claz" >
+				2
+		</div>
+		
+		<div id="tab.nav.item.3" class="view-stack-item-claz" >
+				3
+		</div>
+	</div>
+	<script type="text/javascript">
+		WebPlugin.initTab();
+	</script>
+</body>
+</html>

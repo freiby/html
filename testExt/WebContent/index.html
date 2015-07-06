@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="resources/css/ext-all-neptune.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+	<script src="locale/ext-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+        function init() {
+            // Ext.MessageBox.alert("ExtJS", "Hello ExtJS");
+            Ext.define("Person",{
+            	name:"",
+            	cc:[]
+            });
+            
+            var fdp = Ext.create("Person");
+            fdp.cc.push("a");
+            var gyj = Ext.create("Person");
+            fdp.name = "fdp";
+            gyj.name = "gyj";
+            gyj.cc.push("b");
+            console.log(fdp.name);
+            console.log(gyj.name);
+        }
+		Ext.onReady(init);
+    </script>
+    
+</head>
+<body>
+   
+</body>
+</html>

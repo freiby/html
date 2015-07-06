@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="../jquery-1.11.2.js"></script>
+		<script>
+			$(document).ready(function() {
+				
+			});
+			
+			function click1(){
+				jQuery("#info").html("<input type='button' value='ok' onclick='hello()'><script language='javascript'>function hello(){alert('hello');};alert('aaa');<\/script>");
+			};
+		</script>
+	</head>
+	<body>
+		<div id="info">fdfd</div>
+		<input type='button' value='ok' onclick='click1()'>
+	</body>
+</html>

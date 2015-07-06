@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="resources/css/ext-all-neptune.css" rel="stylesheet" />
+<script src="ext-debug.js"></script>
+<script src="locale/ext-lang-zh_CN.js"></script>
+<script type="text/javascript">
+function init(){
+	var win = Ext.create('Ext.window.Window', {
+	    title: 'Hello',
+	    height: 200,
+	    width: 400,
+	    layout: 'fit',
+	    items: {  // Let's put an empty grid in just to illustrate fit layout
+	        xtype: 'grid',
+	        border: false,
+	        columns: [{header: 'World'}],                 // One header just for show. There's no data,
+	        store: Ext.create('Ext.data.ArrayStore', {}) // A dummy empty data store
+	    }
+	});
+	win.show();
+	
+	console.log(win instanceof Ext.window.Window);
+	
+	
+	
+}
+Ext.onReady(init);
+</script>
+</head>
+<body>
+
+</body>
+</html>
