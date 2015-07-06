@@ -7,7 +7,7 @@
 		<!--<script src="jquery-1.11.2.js"></script> -->
 		<script  type="text/javascript">
 			var aQuery = function(selector, context) {
-				return aQuery.prototype.init();
+				return new aQuery.prototype.init();
 			};
 			aQuery.fn = aQuery.prototype = {
 				init : function() {
@@ -27,6 +27,8 @@
     			};
     		})(aQuery);
 			var initFunc = aQuery();
+			var initFunc1 = aQuery();
+			console.log(initFunc == initFunc1);
 			console.log(aQuery().tabs()); //20
 		</script>
 

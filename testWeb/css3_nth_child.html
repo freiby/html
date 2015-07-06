@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+
+		<style type="text/css">
+			li {
+				padding: 10px;
+			}
+			input[name^="news"] {
+				border: 1px solid #F60;
+			}
+			ol li:nth-child(3n+1) {
+				background: #EEE;
+			}
+			ol li:nth-child(3n+2) {
+				background: #666;
+			}
+			input:disabled {
+				background: #EEE;
+			}
+			div:target {
+				background: #F60;
+			}
+			ol ~div {
+				margin: 5px 0;
+				background: #EEE;
+				padding: 10px;
+			}
+			div:not(#note) {
+				margin: 10px 0;
+				border: 1px solid #CCC;
+				padding: 10px;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<input name="newsletter" value="name=newsletter" />
+		<input name="milkman" disabled="disabled" value="name=milkman"/>
+		<input name="newsboy" value="name=newsboy" />
+		<div id="webt">
+			前端工程师要学习的内容主要有：
+		</div>
+		<ol>
+			<li>
+				JavaScript
+			</li>
+			<li>
+				CSS
+			</li>
+			<li>
+				HTML
+			</li>
+			<li>
+				Ajax
+			</li>
+			<li>
+				JSON
+			</li>
+			<li>
+				XML
+			</li>
+			<li>
+				jQuery
+			</li>
+		</ol>
+		<div id="note">
+			ol li:nth-child(3n+1)表示匹配索引（从1开始）为3n+1的li元素，n可取0、1、2、3...等。E:nth-child(n)中n还为odd（奇数）、even（偶数）
+		</div>
+	</body>
+</html>
