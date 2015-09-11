@@ -10,7 +10,7 @@
 		var TemplateClass = function(){};
 
 		var EObject = {
-			chain: Object.create ||  function (object) {
+			chain:  function (object) {
 				TemplateClass.prototype = object;
 				var result = new TemplateClass();
 				TemplateClass.prototype = null;
