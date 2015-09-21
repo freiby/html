@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-09-20 12:26:25
+ * @version $Id$
+ */
+ .commn {
+ 	margin: 0 0 0 0;
+ 	padding: 0 0 0 0;
+ }
+.ball{
+	position: absolute;
+	width: 100px;
+	height:100px;
+	/*left: 50%;*/
+	top:400px;
+	border: 1px solid;
+	/*border-radius: 50%;*/
+	/*border: 1px solid green;
+	background: -webkit-radial-gradient(40px 40px, circle, #D7E7F1 0%, #AFD3EE 10%, #6DA9D5 20%, #238FE2 30%, #2081CB 50%, #0E5D99 70%);
+	background: radial-gradient(40px 40px, circle, #D7E7F1 0%, #AFD3EE 10%, #6DA9D5 20%, #238FE2 30%, #2081CB 50%, #0E5D99 70%);*/
+	/*box-sizing: border-box;*/
+
+}
+.world{
+	width: 100%;
+	height: 500px;
+	border: 1px solid #AAAAAA;
+	background: -webkit-linear-gradient(bottom,#FCFCFC, #CCCCCC); /* Safari 5.1 - 6.0 */
+	/*text-align: center;*/
+	/*box-sizing: border-box;*/
+}
