@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>bounce</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+		<div class="world commn">
+			<div class="ball commn" >
+    	</div>
+	</div>
+	<script type="text/javascript" src="../../libs/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			ball$ = $('.ball');
+			var timer;
+			var angle = 0,range = 0.5;
+			var speed = 0.05;
+			var scaleX,scaleY;
+			var centerScale = 1;
+			var w = ball$.width();//图片宽度 
+        	var h = ball$.height();//图片高度  
+			clearInterval(timer);
+			timer = setInterval(function (){
+				scaleX = scaleY = centerScale +
+							Math.sin(angle) * range;
+				var ww = w * scaleX;
+				var hh = h * scaleY;
+				// ball$.css({transform:scale(scaleX,scaleY)});
+				ball$.css({"width":ww,"height":hh});//设置缩放后的宽度和高度 
+				angle += speed;
+			},30);
+			
+			$('.ball').css();
+		});
+
+	</script>
+</body>
+
+
+</html>
