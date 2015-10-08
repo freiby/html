@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-09-28 11:22:17
+ * @version $Id$
+ */
+
+ .load{
+ 	border: solid 2px red;
+ }
