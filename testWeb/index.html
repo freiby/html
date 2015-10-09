@@ -6,6 +6,57 @@
 		<title>New Web Project</title>
 		<!--<script src="jquery-1.11.2.js"></script> -->
 		<script  type="text/javascript">
+
+			//死循环
+			// var zzz = function(){
+			// 	var that = this;
+			// 	return  new zzz();
+			// };
+
+			// zzz.prototype = {
+			// 	sayz: function(){
+			// 		alert("say z ");
+			// 	}
+			// };
+
+			var xxx = function(){
+				var that = this;
+				return xxx.prototype.init();
+			};
+
+
+			xxx.prototype = {
+				say: function(){
+					alert("hello world");
+				
+				},
+				sayhellow: function(){
+					alert("hello world2");
+				},
+				init: function(){
+					return this;
+				}
+
+			};
+
+			xxx.prototype.init.prototype = xxx.prototype;
+
+
+			var xxxxins = xxx();
+			var xxxxins2 = xxx();
+			var xxxins = new xxx();
+			// var zzzins = zzz();
+
+			xxxins.say();
+			xxxxins.sayhellow();
+
+			//如果不加new 关键字 那么 每次返回的是同一个实例
+			alert( 'not new keyword:  '  + (xxxxins === xxxxins2));
+
+			var aQuery1 = function(selector, context) {
+				return  aQuery.prototype.init();
+			};
+
 			var aQuery = function(selector, context) {
 				return new aQuery.prototype.init();
 			};
@@ -24,6 +75,7 @@
 			(function ($) {
     			$.fn.tabs = function (options) {
     				alert('ok');
+    				return "ok";
     			};
     		})(aQuery);
 
