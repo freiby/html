@@ -11,9 +11,9 @@
   float: right;
   line-height: 1.42857;
 }
-*[dir="rtl"] .metismenu .arrow {
+/**[dir="rtl"] .metismenu .arrow {
   float: left;
-}
+}*/
 
 /*
  * Require Bootstrap
@@ -65,9 +65,9 @@
        -o-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.metismenu .plus-minus {
+/*.metismenu .plus-minus {
   float: right;
-}
+}*/
 *[dir="rtl"] .metismenu .plus-minus {
   float: left;
 }
