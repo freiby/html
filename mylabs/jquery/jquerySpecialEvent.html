@@ -135,6 +135,16 @@
                 if (elems.length === 0) {
                     $(document).unbind('click', click_handler);
                 }
+            },
+            handle: function(e) {//这个可以不写，为了测试这个回调函数
+                console.log("handle " + e);
+
+                if ($(e.target).is(this)) {
+                  return e.
+                  handleObj.
+                  handler.
+                  apply(this, arguments);
+                }
             }
         };
 
