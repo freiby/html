@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style type="text/css">
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8em;
+    }
+    
+    h1 {
+        font-weight: 700;
+        font-family: "Gill Sans", "Gill Sans MT", Arial, Helvetica, sans-serif;
+    }
+    
+    h1,
+    a {
+        color: #913D00;
+    }
+    
+    a:hover {
+        color: #FF7F00;
+    }
+    
+    h1 {
+        font-size: 120%;
+        margin-bottom: 0.6em;
+    }
+    
+    .intro {
+        font-style: italic;
+        margin-top: 0.5em;
+    }
+    
+    #test div {
+        border: 1px solid #000;
+        margin: 1em 0;
+        padding: 0.5em 1em;
+    }
+    
+    #a {
+        padding-bottom: 0 !important;
+    }
+    
+    #log {
+        margin-top: 1em;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>
+    <a href="http://benalman.com/news/2010/03/jquery-special-events/" target="_top">jQuery special events</a>
+    &raquo; Custom tripleclick event
+</h1>
+    <p class="intro">(triple-click boxes)</p>
+    <div id="test">
+        <div id="a">
+            a
+            <div id="b">b</div>
+            <div id="c">c</div>
+            <div id="d">d</div>
+        </div>
+    </div>
+    <div id="nav">
+        <a href="#">clear log</a>
+    </div>
+    <div id="log"></div>
+    <script type="text/javascript" src="../../libs/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        function log() {
+            $('#log').append([].join.call(arguments, ', ') + '<br/>');
+        };
+
+        $('#test div').bind('tripleclick', function(event) {
+            log('1. #' + this.id);
+
+            //return false; // Un-comment to stop propagation.
+            //event.stopPropagation(); // Un-comment to stop propagation.
+            //event.stopImmediatePropagation(); // Un-comment to stop immediate propagation.
+        });
+
+        $('#test div').bind('tripleclick', function(event) {
+            log('2. #' + this.id);
+        });
+
+        // This is just for the "clear log" link.
+        $('a').click(function() {
+            $('#log').empty();
+            return false;
+        });
+    });
+
+    //////////////////////////////////////////////////
+    // THE FOLLOWING CODE IS TAKEN FROM THE EXAMPLE //
+    //////////////////////////////////////////////////
+
+    (function($) {
+
+        // A collection of elements to which the tripleclick event is bound.
+        var elems = $([]),
+
+            // Initialize the clicks counter and last-clicked timestamp.
+            clicks = 0,
+            last = 0;
+
+        // Click speed threshold, defaults to 500.
+        $.tripleclickThreshold = 500;
+
+        // Special event definition.
+        $.event.special.tripleclick = {
+            setup: function() {
+                // Add this element to the internal collection.
+                elems = elems.add(this);
+
+                // If this is the first element to which the event has been bound,
+                // bind a handler to document to catch all 'click' events.
+                if (elems.length === 1) {
+                    $(document).bind('click', click_handler);
+                }
+            },
+            teardown: function() {
+                // Remove this element from the internal collection.
+                elems = elems.not(this);
+
+                // If this is the last element removed, remove the document 'click'
+                // event handler that "powers" this special event.
+                if (elems.length === 0) {
+                    $(document).unbind('click', click_handler);
+                }
+            },
+            handle: function(e) {//这个可以不写，为了测试这个回调函数
+                console.log("handle " + e);
+
+                if ($(e.target).is(this)) {
+                  return e.
+                  handleObj.
+                  handler.
+                  apply(this, arguments);
+                }
+            }
+        };
+
+        // This function is executed every time an element is clicked.
+        function click_handler(event) {
+            var elem = $(event.target);
+
+            // If more than `threshold` time has passed since the last click, reset
+            // the clicks counter.
+            if (event.timeStamp - last > $.tripleclickThreshold) {
+                clicks = 0;
+            }
+
+            // Update the last-clicked timestamp.
+            last = event.timeStamp;
+
+            // Increment the clicks counter. If the counter has reached 3, trigger
+            // the "tripleclick" event and reset the clicks counter to 0. Trigger
+            // bound handlers using triggerHandler so the event doesn't propagate.
+            if (++clicks === 3) {
+                elem.trigger('tripleclick');
+                clicks = 0;
+            }
+        };
+
+    })(jQuery);
+    </script>
+</body>
+
+</html>

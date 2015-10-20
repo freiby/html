@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>color_query</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style type="text/css">
+	    .colorPanel {
+	        width: 200px;
+	        height: 200px;
+	        border: solid 1px;
+	        margin: auto auto;
+	        background-color: #EEE;
+
+	    }
+	    .container{
+	    	text-align: center;
+	    }
+	    .submit{
+	    	width: 50px;
+	    	height: 25px;
+	    }
+	    .colorText{
+	    	margin-top: 20px;
+	    }
+    </style>
+    <script type="text/javascript" src="../../libs/js/jquery.js"></script>
+    <script type="text/javascript">
+	    $(function() {
+	    	$(".submit").on('click',function(){
+	    		// var color = $('.colorText')[0].value;
+	    		var color = $('.colorText').val();
+	    		$('.colorPanel').css('background-color',color);
+	    	});
+	    });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="colorPanel">
+        </div>
+        <input class="colorText" type="text" value="#FFFF00"/>
+        <button class="submit">submit</button>
+    </div>
+</body>
+
+</html>
