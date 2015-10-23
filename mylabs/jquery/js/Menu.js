@@ -4,12 +4,12 @@
  * @date    2015-10-10 14:35:45
  * @version $Id$
  */
-
+ 'use strict';
 +function($){
 
 
 	function checkTransition(){
-		var el = document.createElement("cc");
+		var el = document.createElement('cc');
 		var transEndEventNames = {
 		      MozTransition: 'transitionend',
 		      WebkitTransition: 'webkitTransitionEnd',
@@ -28,7 +28,7 @@
 		$.event.special['mmTransitionEnd'] = {
 			bindType: transition.end,
 			delegateType: transition.end,
-		} 
+		}; 
 	}
 
 	function MyMenu(element,options){
@@ -36,7 +36,7 @@
 		this.options = options;//$.extend({}, options);
 		this.transitioning = null;
 		this.init();
-	};
+	}
 
 	MyMenu.DEFAULT = {
 		activeClass:'active',
@@ -86,7 +86,7 @@
 		$ulList.parent().removeClass(activeClass);
 
 		$ulList.height($ulList.height());//这个是动画的关键，由于设置内嵌的css，优先权最高，所有就是下面这行代码，把css设置height为0，也不会生效的的。所以这个时候高度还是不变的
-		$ulList.addClass(collapsingClass).removeClass(collapseClass).removeClass(collapseInClass);;
+		$ulList.addClass(collapsingClass).removeClass(collapseClass).removeClass(collapseInClass);
 
 		var completed = function(){
 			$ulList
@@ -141,4 +141,4 @@
 		});
 	};
 	$.fn.metisMenu = Plugin;
-}(jQuery)
+}(jQuery);
