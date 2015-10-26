@@ -5,3 +5,6 @@
  * @date    2015-10-20 22:09:48
  * @version $Id$
  */
+img{
+	position: absolute;
+}
