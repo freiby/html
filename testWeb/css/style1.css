@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+/*
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.3
+ *
+*/
+
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+.navbar-right1 {
+    float: right !important;
+    margin-right: -15px;
+  }
+.navbar-top-links1 li {
+  display: inline-block;
+}
+
+
+
+.navbar1:before,
+.navbar1:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar-right1{
+	margin-right: 0px;
+}
+
+
+.navbar-right1:after {
+    content: " ";
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.nav1{
+	border: solid 1px red;
+	min-height: 60px;
+	list-style: none;
+}
+
+
+
+.nav1 > li > a {
+  color: #a7b1c2;
+}
+
+.nav1 > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.navbar-top-links1 li a {
+  padding: 30px 10px;
+  min-height: 50px; 
+  font-size: 14px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.text-muted {
+  color: #777;
+}
