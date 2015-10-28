@@ -1,14 +1,43 @@
 @charset "UTF-8";
+
 /**
  * 
  * @authors Your Name (you@example.org)
  * @date    2015-10-20 22:09:48
  * @version $Id$
  */
+
 .slides {
-  position: relative;
+    position: relative;
 }
 
 .slides .slides-container {
-  display: none;
+    display: none;
+}
+
+
+
+
+.slides-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.slides-pagination a {
+  border: 2px solid #222;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 2px;
+  overflow: hidden;
+  text-indent: -100%;
 }

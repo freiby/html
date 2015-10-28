@@ -20,7 +20,7 @@
             WebkitTransition: '-webkit-transition',
             OTransition: '-o-transition',
             transition: 'transition'
-        }
+        };
         for (var name in transEndEventNames) {
             if (el.style[name] !== undefined) {
                 result.end = transEndEventNames[name];
@@ -50,7 +50,12 @@
             css.container();//给容器加上css
             // image.children();// 由于要给image加一层wrap 为什么加wrap？由于要让缩小时图片看不到的地方能够遮盖。
             css.image();
+
+            pagination.setup();
             $(window).on('resize', function() {
+            	// $slide_container.css({
+             //        	display: 'none'
+             //        });
                 var tid = setTimeout(function() {
                     var $children = $slide_container.children();
 
@@ -139,7 +144,7 @@
                     image.center(img, image_aspect_ratio);
                 });
             },
-        }
+        };
 
         var image = {
             centerY: function(image) {
@@ -210,13 +215,35 @@
 
             }
 
-        }
+        };
+
+        var pagination = {
+            setup: function() {
+                var count = $slide_container.children().length;
+                var $nav = $("<nav>", {
+                    'class': that.options.elements.pagination.replace(/^\./, '')
+                });
+                $nav.appendTo($el);
+                for (var i = 0; i < count; i++) {
+                    pagination.addItem($nav, i);
+                }
+            },
+            addItem: function($container, index) {
+                var $item = $('<a>href</a>', {
+                    'href': index + 1,
+                    'text': ''
+                });
+                $item.appendTo($container);
+            }
+
+        };
+
 
 
     };
     Slide.prototype = {
         size: function() {
-            return slide_container.children().lenght();
+            return $slide_container.children().length();
         },
         next: function() {
             if (this.current >= this.size() - 1) {
