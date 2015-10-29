@@ -34,7 +34,8 @@
         return result;
     };
 
-    var transition = checkTransition();
+    var transition = this.transition = checkTransition();
+
     if (!!transition.hasOwnProperty('end')) {
         $.event.special['mmTransitionEnd'] = {
             bindType: transition.end,
@@ -49,28 +50,31 @@
             that.height = that.findHeight();
             css.container();//给容器加上css
             // image.children();// 由于要给image加一层wrap 为什么加wrap？由于要让缩小时图片看不到的地方能够遮盖。
-            
-            css.image();
             css.children();
+            css.image();
+            image.children();
             pagination.setup();
             that.animate(0,function(){
 
             });
-            $(window).on('resize', function() {
-            	// $slide_container.css({
-             //        	display: 'none'
-             //        });
-                var tid = setTimeout(function() {
-                    var $children = $slide_container.children();
 
+            $(window).on('resize', function() {
+                var tid = setTimeout(function() {
+                    // that.initing = false;
+                    var $children = $slide_container.children();
                     that.width = that.findWidth();
                     that.height = that.findHeight();
                     css.container();
                     css.image();
+                    that.animate(that.current,function(){
+
+                    });
                 }, 10);
             });
+            that.initing = true;
         };
         var that = this;
+        this.initing = false;
         this.options = $.extend({
             play: false,
             animation_speed: 600,
@@ -97,26 +101,22 @@
             'class': 'slide-control'
         });
 
-        this.current = 0;
-
+        this.current = -1;
+        this.animating = false;
         var transCss = {
             height: '100%',
-            overflow: 'hidden',
             display: 'block',
             margin: '0',
             padding: '0',
             listStyle: 'none',
             position: 'relative',
-            width: that.findWidth() * 3,
-            left:-that.findWidth()
+            left:'0',
+            width: that.findWidth()
         };
 
-        transCss[transition.trans] = 'all 1s ease';
-
-
-        var css = {
+        var css = this.css = {
             container: function() {
-                $slide_container.css(transCss);
+                css.trans(true);
                 $('body').css({
                     margin: 0
                 });
@@ -125,7 +125,6 @@
                     overflow: 'hidden',
                     width: '100%',
                     height: that.height, //屏幕宽度 
-
                 });
             },
             image: function() {
@@ -145,7 +144,7 @@
                 $children.each(function() {
                     var img = this;
                     var image_aspect_ratio = image.ratio(img);
-                    image.children();
+                    
                     image.scale(img, image_aspect_ratio);
                     image.center(img, image_aspect_ratio);
                 });
@@ -153,6 +152,17 @@
             children: function(){
                 var $imageList = $slide_container.children();
                 $imageList.css({left:that.width});
+            },
+            trans: function(has){
+                if(has){
+                    transCss[transition.trans] = 'all 1s ease';
+                }else{
+                    transCss[transition.trans] = 'all 0s ease';
+                }
+                $slide_container.css(transCss);
+            },
+            selected: function(){
+
             }
         };
 
@@ -227,7 +237,7 @@
 
         };
 
-        var pagination = {
+        var pagination = this.pagination = {
             setup: function() {
                 var count = $slide_container.children().length;
                 var $nav = $("<nav>", {
@@ -237,6 +247,7 @@
                 for (var i = 0; i < count; i++) {
                     pagination.addItem($nav, i);
                 }
+                that.$nav = $nav;
             },
             addItem: function($container, index) {
                 var $item = $('<a>', {
@@ -246,21 +257,27 @@
                 $item.appendTo($container);
                 $item.on('click',function(e){
                     e.preventDefault();
+                    if(that.animating) 
+                    return false;
                     var ct = e.currentTarget;
                     var $ct = $(ct);
                     var index = $ct.attr('href') - 1;
                     if(index != this.current){
                         that.animate(index,function(){
-
                         })
                     }
+                    pagination.active(index);
                 });
+            },
+            active: function(index){
+                var $alist = that.$nav.children();
+                var $a = $alist.eq(index);
+                $alist.removeClass('active');
+                $alist.eq(index)
+                  .addClass('active');
             }
 
         };
-
-
-
     };
     Slide.prototype = {
         size: function() {
@@ -290,26 +307,55 @@
         findHeight: function() {
             return $(this.options.inherit_width_from).height();
         },
-        animate: function(direction, userCallback) {
+        animate: function(index, userCallback) {
+            this.css.trans(true);
+            var that = this;
             var orientation = {};
-            if (orientation === undefined || direction > this.current) {
-                orientation.direction = 'next';
+            if(index === this.current)return;
+            if (orientation === undefined || index > this.current) {
+                orientation.direction = -1;
             }else{
-                orientation.direction = 'pre';
+                orientation.direction = 1;
             }
+            orientation.from = this.width;
             orientation.currentPage = this.current;
-            orientation.nextPage = direction;
-            orientation.from = this.width * 2;
+            orientation.nextPage = index;
             orientation.to = 0;
+            this.animating = true;
+            var $target = this.$slide_container.children().eq(orientation.nextPage);
+            var $current = this.$slide_container.children().eq(orientation.currentPage);
+            if(this.initing){
+                this.$slide_container.one('mmTransitionEnd', function() {
+                    console.log('transition end ...');
+                    that.css.trans(false);
+                    that.current = index;
+                    that.animating = false;
+                    that.$slide_container.css({
+                        left: 0
+                    });
+                    $target.css({left: 0,'z-index': '2',display:'block'});
+                    $current.css({left:0,'z-index': '0',display:'none'});
+                });
 
-            this.current = direction;
-            this.$slide_container.children().eq(orientation.nextPage).css({left:orientation.from});
-            this.$slide_container.css({
-                left: -this.width*2
-            });
-            this.$slide_container.one('mmTransitionEnd', function() {
-                console.log('transition end ...');
-            });
+                $target.css({display:'block'});
+
+                $target.css({left: -orientation.from * orientation.direction});
+                this.$slide_container.css({
+                    left: orientation.from * orientation.direction
+                });
+                
+            }else{
+                this.$slide_container.children().css({
+                    'z-index': '0'
+                });
+                $target.css({
+                    "z-index": '2'
+                });
+                if(this.current == -1)
+                this.current = 0;
+                that.animating = false;
+                this.pagination.active(that.current);
+            }
         }
     };
     $.fn.slide = function(options) {

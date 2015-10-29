@@ -41,3 +41,7 @@
   overflow: hidden;
   text-indent: -100%;
 }
+
+.slides-pagination a.active{
+  background-color: #222
+}
