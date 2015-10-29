@@ -49,9 +49,13 @@
             that.height = that.findHeight();
             css.container();//给容器加上css
             // image.children();// 由于要给image加一层wrap 为什么加wrap？由于要让缩小时图片看不到的地方能够遮盖。
+            
             css.image();
-
+            css.children();
             pagination.setup();
+            that.animate(0,function(){
+
+            });
             $(window).on('resize', function() {
             	// $slide_container.css({
              //        	display: 'none'
@@ -99,15 +103,15 @@
             height: '100%',
             overflow: 'hidden',
             display: 'block',
-            // display: 'none',
             margin: '0',
             padding: '0',
             listStyle: 'none',
             position: 'relative',
-            width: this.findWidth() * 2
+            width: that.findWidth() * 3,
+            left:-that.findWidth()
         };
 
-        transCss[transition.trans] = 'all 5s ease';
+        transCss[transition.trans] = 'all 1s ease';
 
 
         var css = {
@@ -120,7 +124,8 @@
                     position: 'relative',
                     overflow: 'hidden',
                     width: '100%',
-                    height: that.height //屏幕宽度 
+                    height: that.height, //屏幕宽度 
+
                 });
             },
             image: function() {
@@ -140,10 +145,15 @@
                 $children.each(function() {
                     var img = this;
                     var image_aspect_ratio = image.ratio(img);
+                    image.children();
                     image.scale(img, image_aspect_ratio);
                     image.center(img, image_aspect_ratio);
                 });
             },
+            children: function(){
+                var $imageList = $slide_container.children();
+                $imageList.css({left:that.width});
+            }
         };
 
         var image = {
@@ -289,12 +299,16 @@
             }
             orientation.currentPage = this.current;
             orientation.nextPage = direction;
-            orientation.from = this.findWidth() * 2;
+            orientation.from = this.width * 2;
             orientation.to = 0;
 
             this.current = direction;
+            this.$slide_container.children().eq(orientation.nextPage).css({left:orientation.from});
+            this.$slide_container.css({
+                left: -this.width*2
+            });
             this.$slide_container.one('mmTransitionEnd', function() {
-
+                console.log('transition end ...');
             });
         }
     };
