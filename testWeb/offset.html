@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>offset </title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <body>
+    <style type="text/css">
+        body {
+            border:20px solid #CCC;
+            margin:10px;
+            padding:40px;
+            background:#EEE;
+        }
+        #test {
+            width:400px;
+            height:600px;
+            padding:20px;
+            background:#F60;
+            border:5px solid #888;
+            /*left: 30px;*/
+            position: relative;
+            /*top: -100px;*/
+
+        }
+        .container{
+        	position: relative;
+        	left: 500px;
+        	width:450px;
+            height:250px;
+            border:20px solid #CCC;
+            margin:10px;
+            padding:30px;
+            overflow: scroll;
+        }
+    </style>
+
+    <script type="text/javascript"></script>
+    <div class="container">
+    	<div id="test"></div>
+    </div>
+    
+    <script>
+        var test = document.getElementById("test");
+        test.innerHTML = "<p>Browser:" + navigator.userAgent + "</p>" +
+            "<p>offsetWidth:" + test.offsetWidth + " clientWidth " + test.clientWidth + "</p>" +
+            "<p >offsetHeight:"+ test.offsetHeight +  " clientHeight " + test.clientHeight + "</p>"+
+            "<p>offsetLeft:"+test.offsetLeft+"</p>"+
+            "<p>offsetTop:"+test.offsetTop+"</p>"+
+            "<p>scrollTop:"+test.scrollTop+"</p>";
+    </script>
+</body>
+</body>
+</html>
