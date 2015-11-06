@@ -2,16 +2,16 @@
  * 
  * @authors Your Name (you@example.org)
  * @date    2015-11-06 11:48:36
- * @version $Id$
+ * @version $$Id$$
  */
 
-var $ = function(el) {
-    return new _$(el);    
+var $$ = function(el) {
+    return new _$$(el);    
 };
-var _$ = function(el) {
+var _$$ = function(el) {
     this.el = (el && el.nodeType == 1)? el: document;
 };
-_$.prototype = {
+_$$.prototype = {
     constructor: this,
     addEvent: function(type, fn, capture) {
         var el = this.el;
@@ -86,33 +86,33 @@ _$.prototype = {
 
 // ------------- 以下为测试用脚本------------
 
-var fnClick = function(e) {
-    e = e || window.event;
-    var target = e.target || e.srcElement;
+// var fnClick = function(e) {
+//     e = e || window.event;
+//     var target = e.target || e.srcElement;
     
-    if (target.nodeType === 1) {
-        alert("点击类型：" +  e.type);
-        $(target).fireEvent("alert");
-    }
-}, funAlert1 = function() {
-    alert("自定义alert事件弹出！");    
-}, funAlert2 = function() {
-    alert("自定义alert事件再次弹出！");    
-};
+//     if (target.nodeType === 1) {
+//         alert("点击类型：" +  e.type);
+//         $$(target).fireEvent("alert");
+//     }
+// }, funAlert1 = function() {
+//     alert("自定义alert事件弹出！");    
+// }, funAlert2 = function() {
+//     alert("自定义alert事件再次弹出！");    
+// };
 
-// 测试用的张小姐图片
-var elImage = document.getElementById("image");
-$(elImage)
-    .addEvent("click", fnClick)
-    .addEvent("alert", funAlert1)
-    .addEvent("alert", funAlert2);
+// // 测试用的张小姐图片
+// var elImage = document.getElementById("image");
+// $$(elImage)
+//     .addEvent("click", fnClick)
+//     .addEvent("alert", funAlert1)
+//     .addEvent("alert", funAlert2);
 
-// 删除自定义事件按钮
-var elButton = document.getElementById("button");
-$(elButton).addEvent("click", function() {
-    $(elImage)
-        .removeEvent("alert", funAlert1)
-        .removeEvent("alert", funAlert2);    
+// // 删除自定义事件按钮
+// var elButton = document.getElementById("button");
+// $$(elButton).addEvent("click", function() {
+//     $$(elImage)
+//         .removeEvent("alert", funAlert1)
+//         .removeEvent("alert", funAlert2);    
         
-    alert("清除成功！");
-});
+//     alert("清除成功！");
+// });

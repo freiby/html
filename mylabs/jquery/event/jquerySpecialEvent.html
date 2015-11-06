@@ -89,7 +89,7 @@
 
         //test dom event listener
         $('#test div').each(function(){this.addEventListener('tripleclick', function(e) {
-            alert("ok");
+            console.log("ok " + e.detail);
         },false)});
 
         $('#test div').bind('tripleclick', function(event) {
@@ -173,9 +173,13 @@
                 elem.trigger('tripleclick');
                 clicks = 0;
             }
+
+            //测试 dom的事件 
+            var evc = document.createEvent('CustomEvent');
             var ev = document.createEvent('HTMLEvents');
-            ev.initEvent("tripleclick", false, false);
-            event.target.dispatchEvent(ev);
+            ev.initEvent("tripleclick", false, false,{'key':'value'});
+            evc.initCustomEvent("tripleclick", false, false,{'key':'value'});
+            event.target.dispatchEvent(evc);
         };
 
     })(jQuery);
