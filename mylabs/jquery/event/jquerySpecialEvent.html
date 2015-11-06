@@ -71,7 +71,7 @@
         <a href="#">clear log</a>
     </div>
     <div id="log"></div>
-    <script type="text/javascript" src="../../libs/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../../libs/js/jquery-1.11.3.js"></script>
     <script type="text/javascript">
     $(function() {
 
@@ -86,6 +86,11 @@
             //event.stopPropagation(); // Un-comment to stop propagation.
             //event.stopImmediatePropagation(); // Un-comment to stop immediate propagation.
         });
+
+        //test dom event listener
+        $('#test div').each(function(){this.addEventListener('tripleclick', function(e) {
+            alert("ok");
+        },false)});
 
         $('#test div').bind('tripleclick', function(event) {
             log('2. #' + this.id);
@@ -168,6 +173,9 @@
                 elem.trigger('tripleclick');
                 clicks = 0;
             }
+            var ev = document.createEvent('HTMLEvents');
+            ev.initEvent("tripleclick", false, false);
+            event.target.dispatchEvent(ev);
         };
 
     })(jQuery);
