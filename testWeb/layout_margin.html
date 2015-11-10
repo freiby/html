@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>margin padding</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #ID1 {
+        background-color: #333;
+        color: #FFF;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        /*overflow: hidden;*/
+        overflow: auto;
+        padding-top:1px;
+		padding-bottom:1px;
+    }
+    
+    #ID2 {
+        font: normal 14px/1.5 Verdana, sans-serif;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #F00;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="ID1">
+        <h1 id="ID2">Margins of ID1 and ID2 collapse vertically.<br/>元素ID1与ID2的margins在垂直方向折叠.</h1>
+    </div>
+</body>
+
+</html>
