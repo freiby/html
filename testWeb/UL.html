@@ -17,11 +17,18 @@
 	  margin-bottom: 10px;
 	}
 
-	.navbar-top-links li {
+	.navbar-top-links>li {
 	  display: inline-block;
 	}
+    .two{
+        position: absolute;
+    }
+	.two li{
 
-	
+        display:list-item;
+        overflow: auto;
+
+    }
 
 </style>
 
@@ -30,6 +37,23 @@
     <ul class="nav navbar-top-links navbar-right">
     	<li>
             <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+            <ul class="two nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                    
+                </li>
+                        
+                <li>
+                    <a href="http://webapplayers.com/inspinia_admin-v2.3/login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+                <li>
+                    <a class="right-sidebar-toggle">
+                        <i class="fa fa-tasks">i</i>
+                    </a>
+                </li>
+            </ul>
         </li>
                 
         <li>
@@ -43,5 +67,18 @@
             </a>
         </li>
     </ul>
+
+
+    <div>
+        <div style="display:inline-block">a</div>
+        <div style="display:inline-block">b</div>
+        <div style="display:inline-block">c</div>
+    </div>
+
+    <div style="position: relative; border:1px red solid; ">
+        <div style="position: absolute; border:1px #000 solid; height:200px; width:200px"></div>
+
+    </div>
+
 </body>
 </html>
