@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <definition name="baseLayout" template="/framework/theme/inspinia/baseLayout.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="banner" value="/plugins/com.wxxr.app.monitor/banner.jsp"/>
+      <put-attribute name="menu"   value="/framework/theme/inspinia/menu.jsp"/>
+      <put-attribute name="body"   value="/plugins/com.wxxr.app.monitor/body.jsp"/>
+      <put-attribute name="footer" value="/framework/theme/inspinia/footer.jsp"/>
+   </definition>
+
+   <definition name="tiger" extends="baseLayout">
+      <put-attribute name="title"  value="Tiger"/>
+      <put-attribute name="body"   value="/plugins/com.wxxr.app.monitor/tiger.jsp"/>      
+   </definition>
+
+   <definition name="lion" extends="baseLayout">
+      <put-attribute name="title"  value="Lion"/>
+      <put-attribute name="body"   value="/plugins/com.wxxr.app.monitor/lion.jsp"/>      
+   </definition>
+  
+</tiles-definitions>
