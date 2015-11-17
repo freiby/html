@@ -7,12 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><tiles:insertAttribute name="title" /></title>
-    <link href="./framework/theme/inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./framework/theme/inspinia/css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Toastr style -->
-    <link href="./framework/theme/inspinia/css/toastr.min.css" rel="stylesheet">
-    <link href="./framework/theme/inspinia/css/animate.css" rel="stylesheet">
-    <link href="./framework/theme/inspinia/css/style.css" rel="stylesheet">
+    <link href="css/toastr.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="pace-done">
@@ -131,20 +131,20 @@
         </div>
     </div>
     <!-- Mainly scripts -->
-    <script src="./framework/theme/inspinia/js/jquery-2.1.1.js"></script>
-    <script src="./framework/theme/inspinia/js/bootstrap.min.js"></script>
-    <script src="./framework/theme/inspinia/js/jquery.metisMenu.js"></script>
-    <script src="./framework/theme/inspinia/js/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.metisMenu.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
     <!-- Custom and plugin javascript -->
-    <script src="./framework/theme/inspinia/js/inspinia.js"></script>
+    <script src="js/inspinia.js"></script>
     <!-- jQuery UI -->
-    <script src="./framework/theme/inspinia/js/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <!-- Toastr -->
-    <script src="./framework/theme/inspinia/js/toastr.min.js"></script>
-    <script src="./framework/theme/inspinia/js/embeddedjs1.js"></script>
-    <script src="./framework/theme/inspinia/js/embeddedjs2.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/embeddedjs1.js"></script>
+    <script src="js/embeddedjs2.js"></script>
 
     
-    <script src="./framework/theme/inspinia/js/embeddedjs3.js"></script>
+    <script src="js/embeddedjs3.js"></script>
 </body>
 </html>
