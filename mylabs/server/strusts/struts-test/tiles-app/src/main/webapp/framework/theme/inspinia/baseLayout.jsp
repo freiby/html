@@ -19,7 +19,7 @@
 
 	<div id="wrapper">
 		<tiles:insertAttribute name="menu" />
-		<tiles:insertAttribute name="pageContainer" />
+		<tiles:insertAttribute name="content" />
 	</div>
 	<div class="theme-config"><!--  right config panel -->
         <div class="theme-config-box">
@@ -146,5 +146,23 @@
 
     
     <script src="./framework/theme/inspinia/js/embeddedjs3.js"></script>
+
+
+    <!-- Flot -->
+    <script src="./framework/theme/inspinia/js/jquery.flot.js"></script>
+    <script src="./framework/theme/inspinia/js/jquery.flot.tooltip.min.js"></script>
+    <script src="./framework/theme/inspinia/js/jquery.flot.spline.js"></script>
+    <script src="./framework/theme/inspinia/js/jquery.flot.resize.js"></script>
+    <script src="./framework/theme/inspinia/js/jquery.flot.pie.js"></script>
+
+
+    <!-- GITTER -->
+    <!-- // <script src="./framework/theme/inspinia/js/jquery.gritter.min.js"></script> -->
+    <!-- Sparkline -->
+    <script src="./framework/theme/inspinia/js/jquery.sparkline.min.js"></script>
+    <!-- Sparkline demo data  -->
+    <script src="./framework/theme/inspinia/js/sparkline-demo.js"></script>
+    <!-- ChartJS-->
+    <!-- // <script src="./framework/theme/inspinia/js/Chart.min.js"></script> -->
 </body>
 </html>
