@@ -1,7 +1,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <div class="row  border-bottom white-bg dashboard-header" style="display:block">
     <div class="col-sm-3">
-        <tiles:insertAttribute name="chart1" />
+        <tiles:insertAttribute name="chart1"/>
     </div>
     <div class="col-sm-6">
         <tiles:insertAttribute name="chart2" />

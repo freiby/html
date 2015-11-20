@@ -19,40 +19,18 @@
 
 
    <!--  plugin   -->
-   
-
-   <definition name="tigerContent" extends="content">
-   		<put-attribute name="pageContainer"  value="tigerPage"/>
-		
-   </definition>
-
-
-   <definition name="tigerPage" template="/framework/theme/inspinia/pageContainer.jsp">
-   		<put-attribute name="chart1"  value="/plugins/com.wxxr.app.monitor/view/chart1.jsp"/>
-		<put-attribute name="chart2"  value="/plugins/com.wxxr.app.monitor/view/chart2.jsp"/>
-		<put-attribute name="chart3"  value="/plugins/com.wxxr.app.monitor/view/chart3.jsp"/>
-   </definition>
-
    <definition name="tiger" extends="baseLayout">
       <put-attribute name="title"  value="Tiger"/>
-	  <!-- <put-attribute name="content"   value="tigerContent"/> -->
-
 	  <put-attribute name="chart1"  value="/plugins/com.wxxr.app.monitor/view/chart1.jsp" contribute="content.pageContainer"/>
 	  <put-attribute name="chart2"  value="/plugins/com.wxxr.app.monitor/view/chart2.jsp" contribute="content.pageContainer"/>
 	  <put-attribute name="chart3"  value="/plugins/com.wxxr.app.monitor/view/chart3.jsp" contribute="content.pageContainer"/>
+	  <put-attribute name="chart3"  value="/plugins/com.wxxr.app.monitor/view/chart3.jsp" contribute="content"/>
    </definition>
    
 
 
-   <definition name="lionContent" extends="content">
-   		<put-attribute name="pageContainer"  value="/plugins/com.wxxr.app.monitor/lionPageContainer.jsp"/>
-   </definition>
-
    <definition name="lion" extends="baseLayout">
 	  <put-attribute name="title"  value="Lion"/>
-      <put-attribute name="content"   value="lionContent"/>
-      <!--  -->
-      <!-- <put-attribute name="body"   value="/plugins/com.wxxr.app.monitor/lion.jsp"/> -->      
    </definition>
   
 </tiles-definitions>
