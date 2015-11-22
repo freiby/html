@@ -2,12 +2,12 @@
 
 <!DOCTYPE tiles-definitions PUBLIC
    "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
-   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   "file://D:/WorkSpace/html/flex/tiles-core/src/main/resources/org/apache/tiles/resources/tiles-config_2_0.dtd">
 
 <tiles-definitions>
 
    <!-- framework -->
-   <definition name="baseLayout" template="/framework/theme/inspinia/baseLayout.jsp">
+   <definition name="baseLayout" template="/framework/theme/inspinia/baseLayout.jsp" >
       <put-attribute name="title"  value="Template"/>
       <put-attribute name="menu"   value="/framework/theme/inspinia/menu.jsp"/>
       <put-attribute name="content"   value="content"/>
@@ -15,7 +15,7 @@
 
    <definition name="content" template="/framework/theme/inspinia/content.jsp">
 		<put-attribute name="pageHeader"  value="/framework/theme/inspinia/pageHeader.jsp"/>
-		<put-attribute name="pageContainer"  value="/framework/theme/inspinia/pageContainer.jsp"/>
+		<put-attribute name="pageContainer"  value="/framework/theme/inspinia/pageContainer.jsp" />
    </definition>
    
 
@@ -23,8 +23,8 @@
    <!--  plugin   -->
     
    <product name="nirvana" description="">
-      <page name="tiger" description="" icon="" defautPage="true"/>
-	  <page name="lion" description="" icon=""/>
+      <page name="tiger" description="" icon="" defautPage="true" tamplateref="content.pageContainer"/>
+	  <page name="lion" description="" icon="" tamplateref="content.pageContainer"/>
    </product>
    
  

@@ -21,9 +21,14 @@
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
 			<result-type name="ntiles" class="com.wxxr.nirvana.result.ProductResult"/>
 		</result-types>
-		<action name="*Product" method="{1}"
+		<action name="*Product" method="startProduct"
 			class="com.wxxr.nirvana.action.ProductAction">
 			<result name="start" type="ntiles">${productName}</result>
+		</action>
+		
+		<action name="goPage" method="goPage"
+			class="com.wxxr.nirvana.action.ProductAction">
+			<result name="go" type="ntiles">${pageName}</result>
 		</action>
 
 	</package>
