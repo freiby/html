@@ -13,6 +13,7 @@
     <link href="./framework/theme/inspinia/css/toastr.min.css" rel="stylesheet">
     <link href="./framework/theme/inspinia/css/animate.css" rel="stylesheet">
     <link href="./framework/theme/inspinia/css/style.css" rel="stylesheet">
+    
 </head>
 
 <body class="pace-done">
@@ -164,5 +165,6 @@
     <script src="./framework/theme/inspinia/js/sparkline-demo.js"></script>
     <!-- ChartJS-->
     <!-- // <script src="./framework/theme/inspinia/js/Chart.min.js"></script> -->
+    <tiles:insertAttribute name="resourcejs" />
 </body>
 </html>
