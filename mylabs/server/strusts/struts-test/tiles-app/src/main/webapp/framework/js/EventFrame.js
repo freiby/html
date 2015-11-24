@@ -1,6 +1,13 @@
 /**
  * 
  * @authors Your Name (you@example.org)
+ * @date    2015-11-23 12:01:49
+ * @version $Id$
+ */
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
  * @date    2015-11-06 11:48:36
  * @version $$Id$$
  */
@@ -87,6 +94,11 @@ _$$.prototype = {
         return this;    
     }
 };
+var page = document.getElementById("page");
+$$(page).addEvent("selectedEvent",function callback(event){
+
+});
+
 
 
 // ------------- 以下为测试用脚本------------
