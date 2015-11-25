@@ -25,4 +25,12 @@ public class JsonTestAction extends ExampleSupport{
         return SUCCESS;
     }
 	
+	/**
+     * Struts2序列化指定属性时，必须有该属性的getter方法，实际上，如果没有属性，而只有getter方法也是可以的
+     * @return
+     */
+    public Map<String, Object> getDataMap() {
+        return dataMap;
+    }
+	
 }
