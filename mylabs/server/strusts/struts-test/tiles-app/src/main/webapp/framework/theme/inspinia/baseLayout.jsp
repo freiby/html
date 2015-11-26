@@ -13,6 +13,7 @@
     <link href="./framework/theme/inspinia/css/toastr.min.css" rel="stylesheet">
     <link href="./framework/theme/inspinia/css/animate.css" rel="stylesheet">
     <link href="./framework/theme/inspinia/css/style.css" rel="stylesheet">
+    <tiles:insertAttribute name="resourcejsheader" />
     
 </head>
 
@@ -165,6 +166,6 @@
     <script src="./framework/theme/inspinia/js/sparkline-demo.js"></script>
     <!-- ChartJS-->
     <!-- // <script src="./framework/theme/inspinia/js/Chart.min.js"></script> -->
-    <tiles:insertAttribute name="resourcejs" />
+    <tiles:insertAttribute name="resourcejsfooter" />
 </body>
 </html>
