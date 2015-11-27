@@ -63,6 +63,8 @@ public class SMDActionTest1 extends ExampleSupport{
         this.beanParam = beanParam;
         this.mapParam = mapParam;
         this.listParam = listParam;
+        
+        ClassLoader cl = this.getClass().getClassLoader();
     }
 
     @SMDMethod
