@@ -3,6 +3,7 @@ package com.wxxr.tiles.example;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings({ "serial" })
 public class JsonTestAction extends ExampleSupport{
 	@Override
 	public String execute() throws Exception {
