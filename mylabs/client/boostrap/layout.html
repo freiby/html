@@ -7,15 +7,14 @@
     <title>boostrap layout</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link href="../../libs/css/bootstrap.css" rel="stylesheet">
-    <script src="../../libs/js/jquery.js"></script>
+    <link href="../libs/css/bootstrap.css" rel="stylesheet">
+    <script src="../libs/js/jquery.js"></script>
     <style type="text/css">
     .row1,
     .row2 {
         /*border: 1px solid #CCCCCC;*/
         padding: 5px;
         text-align: center;
-        vertical-align: middle;
     }
     
     .page-container {
@@ -25,11 +24,28 @@
     .page-row {
         padding: 10px 10px 0px 10px;
     }
-
-    .panel-container{
+    
+    .panel-container {
         background-color: #FFFFFF;
     }
+    
     table {
+        margin: 0 auto;
+    }
+    
+    .Center-Container.is-Table {
+        width: 100%;
+        display: table;
+    }
+    
+    .is-Table .Table-Cell {
+        width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .is-Table .Center-Block {
+        width: 50%;
         margin: 0 auto;
     }
     </style>
@@ -48,12 +64,12 @@
         <div class="row page-row">
             <div class="col-md-4 row1">
                 <div class="panel-container" style="height:200px;">
-                <table>
-                    <tr>
-                        <td class="tdd">
-                        </td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr>
+                            <td class="tdd">
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <!-- <span style="vertical-align: middle"><button>aa</button></span> -->
             </div>
@@ -62,10 +78,25 @@
         </div>
         <div class="row page-row">
             <div class="col-md-3 row2">
-                <div class="panel-container" style="height:200px;">aaa</div>
+                <div class="panel-container Center-Container is-Table" style="height:200px; width:100%;">
+                	<div class="Table-Cell">
+                		<div class="Center-Block">
+		                    <form style=" width: 100%; margin: 0 auto; ">
+		                        <div style="display: table-row;">
+		                            <label for="a" style="display: table-cell;text-align:right">aaa:</label>
+		                            <input id="a" type="text" style="display: table-cell;" />
+		                        </div>
+		                        <div style="display: table-row;">
+		                            <label for="b" style="display: table-cell; text-align:right">bbbbbbbb:</label>
+		                            <input id="b" type="text" style="display: table-cell;" />
+		                        </div>
+		                    </form>
+	                    </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3 row2">
-                <div class="panel-container" style="height:200px;">aaa</div>
+                <div class="panel-container" style=" position:relative; height:200px; width:100%;;vertical-align: middle">aaa</div>
             </div>
             <div class="col-md-3 row2">
                 <div class="panel-container" style="height:200px;">aaa</div>
