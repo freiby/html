@@ -6,7 +6,5 @@ classes
 build
 .settings
 gen
-.classpath
-.project
 .DS_Store
 Version.java
