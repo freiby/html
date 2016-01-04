@@ -7,6 +7,11 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
+<style type="text/css">
+	#container{
+		/*background-color: red;*/
+	}
+</style>
 <script type="text/javascript">
 	function test(e){
 		// e.preventDefault();
@@ -15,13 +20,21 @@
 		//2、 不是在所有的事件处理方法中 return fasle 都能阻止事件宿主的默认行为；
 	}
 </script>
+
+
 </head>
 <body>
-    <a href="http://www.baidu.com" onclick="test(event)">
+    <a href="http://www.baidu.com" onclick="return test(event)">
     	baidu
     </a>
     <br/>
     <a id="link" href="http://w3c.org">W3C 首页链接</a>
+
+    <div id="container" style="border:red 1px solid">
+    	<h2>fdafdf</h2>
+    	<p id="p">aaaaaaaaaaaaaaaaaa</p>
+    	<img src=""/>
+    </div>	
  
 	<script>
 		// 在新窗口, 打开页面
@@ -31,6 +44,18 @@
 			// 退出执行 (在监听事件之后执行的浏览器默认动作将不会被执行)
 			return false;
 		};
+	</script>
+	<script type="text/javascript" src="../jquery-1.11.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#container').on('mousedown',function(e){
+				alert(' container ' + e.target['nodeName']);
+			});
+
+			$('#p').on('mousedown',function(e){
+				alert(' child ' + e.target['nodeName']);
+			});
+		})
 	</script>
 </body>
 </html>
