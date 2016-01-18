@@ -126,12 +126,15 @@
         var $parent = self.parent('li');
         var $list = $parent.children('ul');
         if($this.options.preventDefault){
+          console.log("doule tap!!!!");
           e.preventDefault();
         }
         if ($parent.hasClass(activeClass) && !$this.options.doubleTapToGo) {
+          console.log("hide");
           $this.hide($list);
           self.attr('aria-expanded',false);
         } else {
+          console.log("show");
           $this.show($list);
           self.attr('aria-expanded',true);
         }
