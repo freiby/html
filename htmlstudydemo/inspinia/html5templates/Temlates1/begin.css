@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-01-18 14:26:30
+ * @version $Id$
+ */
+
+body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #2f4050;
+    font-size: 13px;
+    color: #676a6c;
+    overflow-x: hidden;
+}
+
+
+/*@media (min-width: 768px) {*/
+
+#page-wrapper {
+    position: relative;
+    margin: 0 0 0 220px;
+    min-height: 1200px;
+}
+
+.navbar-static-side {
+    z-index: 2001;
+    /*position: absolute;*/
+    position: relative;
+    float: left;
+    width: 220px;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+}
+
+
+/*}*/
+
+.nav > li > a {
+    color: #a7b1c2;
+    font-weight: 600;
+    padding: 14px 20px 14px 25px;
+}
+
+.nav-second-level li a {
+    padding: 7px 10px 7px 10px;
+    padding-left: 52px;
+}
+
+.nav-header {
+    padding: 33px 25px;
+    background: url("http://webapplayers.com/inspinia_admin-v2.3/css/patterns/header-profile.png") no-repeat;
+}
+
+.metismenu .arrow {
+    float: right;
+    line-height: 1.42857;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.metismenu .active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.nav.nav-second-level > li.active {
+    border: none;
+}
+
+.nav > li.active {
+    border-left: 4px solid #19aa8d;
+    background: #293846;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: #2f4050;
+}
+
+.nav > li.active > a {
+    color: #ffffff;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+    background-color: #293846;
+    color: white;
+}
+
+.navbar-default .landing_link a {
+    background: #1cc09f;
+    color: white;
+}
+
+.navbar-default .landing_link a:hover {
+    background: #1ab394 !important;
+    color: white;
+}
+
+.navbar-default .special_link a {
+    background: #1ab394;
+    color: white;
+}
+
+.navbar-default .special_link a:hover {
+    background: #17987e !important;
+    color: white;
+}
+
+.navbar-default .special_link a span.label {
+    background: #fff;
+    color: #1ab394;
+}
+
+.gray-bg {
+    background-color: #f3f3f4;
+}
