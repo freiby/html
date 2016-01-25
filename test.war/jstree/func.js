@@ -159,6 +159,7 @@ self.onmessage = function (data, undefined) {
                 // console.log(" d property name [" + propertyName + "] value [" + d[propertyName] + "]");
                 if(typeof(d[propertyName]) == 'string'){
                     console.log(" d property name [" + propertyName + "] value [" + d[propertyName] + "]");
+                    tmp[propertyName]= d[propertyName];
                 }
             }
             if (d && d.id) {

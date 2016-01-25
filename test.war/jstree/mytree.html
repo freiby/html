@@ -9,9 +9,10 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="./bootstrap.css" />
     <link rel="stylesheet" href="./themes/default/style.css" />
+    <link rel="stylesheet" href="./font-awesome.css">
     <style type="text/css">
     .container {
-        text-align: center;
+        /*text-align: center;*/
     }
     
     .ilable {}
@@ -30,7 +31,20 @@
             <input type="search" id="q">
             <button type="submit">Search</button>
         </form>
+        <a href="#"><i class="icon-desktop"></i> desktop</a>
+        <a href="#"><i class="icon-laptop"></i> laptop</a>
+        <a href="#"><i class="icon-sitemap"></i> sitemap</a>
+        <a href="#"><i class="icon-ok-sign"></i> ok-sign</a>
+        <a href="#"><i class="icon-ok-circle"></i> ok-circle</a>
+        <a href="#"><i class="icon-question-sign"></i> question-sign</a>
+        <a href="#"><i class="icon-globe"></i> ok-globe</a>
+        <a href="#"><i class="icon-info-sign"></i> info-sign</a>
+         <a href="#"><i class="icon-warning-sign"></i> warning-sign</a>
+         <a href="#"><i class="icon-cloud"></i> icon-cloud</a>
     </div>
+
+
+    
     <script src="./jquery.js"></script>
     <script src="./jstree.js"></script>
     <script type="text/javascript">
@@ -40,14 +54,15 @@
             'core': {
                 'data': [{
                     "text": "Root node",
+                    'monitorstate': 'error',
                     "children": [{
-                        "text": "监控节点",
-                        'monitorstate': 'error'
+                        "text": "监控节点"
                     }, {
                         "text": "Child node 2",
                         'monitorstate': 'error',
                         "children": [{
-                            "text": "children node 3"
+                            "text": "children node 3",
+                            'monitorstate': 'error'
                         }]
                     }]
                 }]
@@ -56,7 +71,7 @@
 
         $("#s").submit(function(e) {
             e.preventDefault();
-            $(".tree_nav").jstree(true).search($("#q").val());
+            $(".tree_nav").jstree(true).search($("#q").val(),'monitorstate');
         });
     })
     </script>

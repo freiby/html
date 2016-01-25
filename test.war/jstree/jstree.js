@@ -43,7 +43,7 @@
 		themes_loaded = [],
 		src = $('script:last').attr('src'),
 		document = window.document, // local variable is always faster to access then a global
-		_node = document.createElement('LI'), _temp1, _temp2;
+		_node = document.createElement('LI'), _temp1, _temp2, _temp3;
 
 	_node.setAttribute('role', 'treeitem');
 	_temp1 = document.createElement('I');
@@ -55,9 +55,19 @@
 	_temp1.setAttribute('href','#');
 	_temp1.setAttribute('tabindex','-1');
 	_temp2 = document.createElement('I');
-	_temp2.className = 'jstree-icon jstree-themeicon';
+	// _temp2.className = 'jstree-icon jstree-themeicon';
+	_temp2.className = 'jstree-themetype-icon jstree-icon';
 	_temp2.setAttribute('role', 'presentation');
+
+
+	_temp3 = document.createElement('I');
+	// _temp2.className = 'jstree-icon jstree-themeicon';
+	_temp3.className = 'jstree-themestate-icon jstree-icon';
+	_temp3.setAttribute('role', 'presentation');
+
+
 	_temp1.appendChild(_temp2);
+	_temp1.appendChild(_temp3);
 	_node.appendChild(_temp1);
 	_temp1 = _temp2 = null;
 
@@ -2336,6 +2346,18 @@
 			}
 			node = _node.cloneNode(true);
 			// node is DOM, deep is boolean
+
+			//add fudapeng  
+			//jstree-icon jstree-themestate-icon jstree-themetype-icon
+			var $type_icon = $(node).find('.jstree-icon.jstree-themetype-icon');
+			if($type_icon.length == 1 && obj['typeclass'] !== undefined){
+				$type_icon.addClass(obj['typeclass']);
+			}
+
+			var $state_icon = $(node).find('.jstree-icon.jstree-themestate-icon');
+			if($state_icon.length == 1 && obj['monitorsateclass'] !== undefined){
+				$state_icon.addClass(obj['monitorsateclass']);
+			}
 
 			c = 'jstree-node ';
 			for(i in obj.li_attr) {
@@ -6881,7 +6903,7 @@
 		 * @plugin search
 		 * @trigger search.jstree
 		 */
-		this.search = function (str, skip_async, show_only_matches, inside, append, show_only_matches_children) {
+		this.search = function (str, field, skip_async, show_only_matches, inside, append, show_only_matches_children) {
 			if(str === false || $.trim(str.toString()) === "") {
 				return this.clear_search();
 			}
@@ -6944,7 +6966,9 @@
 			f = new $.vakata.search(str, true, { caseSensitive : s.case_sensitive, fuzzy : s.fuzzy });
 			$.each(m[inside ? inside : $.jstree.root].children_d, function (ii, i) {
 				var v = m[i];
-				if(v.text && (!s.search_leaves_only || (v.state.loaded && v.children.length === 0)) && ( (s.search_callback && s.search_callback.call(this, str, v)) || (!s.search_callback && f.search(v.text).isMatch) ) ) {
+				var searchField = field === undefined ? v.text : (v[field] === undefined ? '' : v[field]);
+
+				if(v.text && (!s.search_leaves_only || (v.state.loaded && v.children.length === 0)) && ( (s.search_callback && s.search_callback.call(this, str, v)) || (!s.search_callback && f.search(searchField).isMatch) ) ) {
 					r.push(i);
 					p = p.concat(v.parents);
 				}
