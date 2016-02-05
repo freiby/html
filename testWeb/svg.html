@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.cc {
+    width: 500px;
+    height: 500px;
+}
+
+.dd {
+    width: 50;
+    height: 50;
+}
+</style>
+<script type="text/javascript">
+function handler() {
+    document.getElementById('svgc').className = "dd";
+}
+</script>
+
+<body>
+    <!-- 	<svg id="svgc" class="cc" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  		<path d="M150 0 L75 200 L225 200 Z" />
+	</svg>
+ -->
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400">
+        <!-- 这个圆的大小是400 x 400, 那么这个SVG的宽和高就是400了 -->
+        <circle cx="200" cy="200" r="200" fill="red" />
+    </svg>
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+        <!-- 这个圆的大小是400 x 400, 那么这个SVG的宽和高就是400了 -->
+        <circle cx="200" cy="200" r="200" fill="red" />
+    </svg>
+
+
+
+
+
+
+    <svg id="svg" width="400" height="200" viewBox="0 0 200 200" style="border:1px solid #cd0000;">
+        <rect x="0" y="0" width="150" height="150" fill="#cd0000" />
+    </svg>
+    <p>
+        <input type="radio" id="radio0" name="ratio" value="" checked>
+        <label for="radio0">无preserveAspectRatio</label>
+    </p>
+    <p>
+        <input type="radio" id="radio1" name="ratio" value="meet">
+        <label for="radio1">meet</label>
+    </p>
+    <p>
+        <input type="radio" id="radio2" name="ratio" value="slice">
+        <label for="radio2">slice</label>
+    </p>
+    <p>
+        <input type="radio" id="radio3" name="ratio" value="none">
+        <label for="radio3">none</label>
+    </p>
+    <!-- <button id="bt" style="left:1000px" onclick="handler()">dfdfed</button> -->
+    <script type="text/javascript">
+	    var svg = document.getElementById("svg");
+	    svg && [].slice.call(document.querySelectorAll("input[type=radio]")).forEach(function(radio) {
+	        radio.addEventListener("click", function() {
+	            var value = this.value;
+	            if (value == "") {
+	                svg.removeAttribute("preserveAspectRatio");
+	                return;
+	            }
+	            if (value != "none") {
+	                value = "xMinYMin " + value;
+	            }
+	            svg.setAttribute("preserveAspectRatio", value);
+	        });
+    	});
+    </script>
+</body>
+
+</html>
