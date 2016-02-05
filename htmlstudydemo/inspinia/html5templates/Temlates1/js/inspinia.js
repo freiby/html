@@ -127,6 +127,8 @@ $(document).ready(function () {
         }
 
         if (navbarHeigh < wrapperHeigh) {
+            console.log("window outerHeight " + $(window).outerHeight() + " page outerHeight " + $('#page-wrapper').outerHeight());
+            console.log("window " + $(window).height() + " page " + $('#page-wrapper').height());
             $('#page-wrapper').css("min-height", $(window).height() + "px");
         }
 

@@ -7,6 +7,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
 </head>
 <body>
     <body>
@@ -18,26 +19,39 @@
             background:#EEE;
         }
         #test {
+            border: 1px solid transparent;
             width:400px;
-            height:600px;
-            padding:20px;
+            height:250px;
+            /*padding:1px;*/
             background:#F60;
-            border:5px solid #888;
-            left: 30px;
+            /*border:5px solid #888;*/
+            /*left: 30px;*/
             position: relative;
             /*top: -100px;*/
-            margin: 10px;
+            /*margin: 10px;*/
+             /*overflow: auto;*/
 
         }
         .container{
         	position: relative;
         	left: 500px;
         	width:450px;
-            height:250px;
-            border:20px solid #CCC;
-            margin:10px;
-            padding:30px;
-            overflow: scroll;
+            height:252px;
+            /*border:20px solid #CCC;*/
+            /*margin:10px;*/
+            /*padding:30px;*/
+            overflow: auto;
+        }
+
+        p{
+            margin-bottom: 1px;
+            margin-top: 5px;
+        }
+        .d{
+            display: block;
+            position: absolute;
+            /*margin-top: 12px;*/
+            /*margin-bottom: 2px;*/
         }
     </style>
 
@@ -49,14 +63,22 @@
     <script>
         var test = document.getElementById("test");
         test.innerHTML = "<p>Browser:" + navigator.userAgent + "</p>" +
-            "<p>offsetWidth:" + test.offsetWidth + " clientWidth " + test.clientWidth + "</p>" +
+            "<p>offsetHeight:" + test.offsetWidth + " clientWidth " + test.clientWidth + "</p>" +
             "<p >offsetHeight:"+ test.offsetHeight +  " clientHeight " + test.clientHeight + "</p>"+
             "<p>offsetLeft:"+test.offsetLeft+"</p>"+
             "<p>offsetTop:"+test.offsetTop+"</p>"+
             "<p>scrollTop:"+test.scrollTop+"</p>"+
             "<p>offsetTop:"+test.offsetLeft+"</p>"+
-            "<p>clientLeft:"+test.clientLeft+"</p>"+
-            "<p>test.style.top:"+test.style.top+"</p>";
+            "<p>clientLeft:"+test.clientLeft+"</p>";
+
+
+        console.log(" test jquery height " + $(test).height());
+        console.log(" test jquery width " + $(test).width());
+        console.log(" test jquery innerWidth " + $(test).innerWidth());
+        console.log(" test jquery outerHeight param true " + $(test).outerHeight(true));
+        console.log(" test jquery outerHeight param false " + $(test).outerHeight(false));
+        console.log(" test jquery outerWidth param true " + $(test).outerWidth(true));
+        console.log(" test jquery outerWidth param false " + $(test).outerWidth(false));
     </script>
 
 
