@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-11-10 13:42:18
+ * @version $Id$
+ */
+.wrapper {
+	background: #fff;
+	position: relative;
+	width: 100%;
+	z-index: 3;
+}

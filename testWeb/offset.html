@@ -22,13 +22,13 @@
             border: 1px solid transparent;
             width:400px;
             height:250px;
-            /*padding:1px;*/
+            padding:1px;
             background:#F60;
             /*border:5px solid #888;*/
             /*left: 30px;*/
             position: relative;
             /*top: -100px;*/
-            /*margin: 10px;*/
+            margin: 10px;
              /*overflow: auto;*/
 
         }
@@ -79,6 +79,12 @@
         console.log(" test jquery outerHeight param false " + $(test).outerHeight(false));
         console.log(" test jquery outerWidth param true " + $(test).outerWidth(true));
         console.log(" test jquery outerWidth param false " + $(test).outerWidth(false));
+
+        console.log(" win jquery height " + $(window).height());
+        console.log(" document jquery height  " + $(document).height());
+        console.log(" document.body jquery height " + $(document.body).height());
+
+
     </script>
 
 

@@ -8,12 +8,49 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="" rel="stylesheet">
-    <style type="text/css" media="screen">
-        a { text-decoration: none; 
-        	font-weight: bold; color: #000; } 
-        a:after { content: " /"; } 
-        a:first-child:before { content: " » "; } 
-        a:last-child:after { content: ""; }
+    <style type="text/css">
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    a:after {
+        content: " /";
+    }
+    
+    a:first-child:before {
+        content: " » ";
+    }
+    
+    a:last-child:after {
+        content: "";
+    }
+    
+    .t-a-f {
+        width: 300px;
+        height: 200px;
+        background-color: #eee;
+        position: relative;
+        display: block;
+    }
+    
+    .t-a-f:after {
+        /*position: relative;*/
+        display: block;
+        position: relative;
+        content: '';
+        top: 0px;
+        left: 100px;
+        height: 100%;
+        width: 100%;
+        background-color: #510;
+    }
+    
+    .container {
+        width: 1170px;
+        height: 500px;
+    }
     </style>
 </head>
 
@@ -23,6 +60,9 @@
         <a href="#">Team</a>
         <a href="#">Developers</a>
     </p>
+    <div class="container">
+        <div class="t-a-f"></div>
+    </div>
 </body>
 
 </html>

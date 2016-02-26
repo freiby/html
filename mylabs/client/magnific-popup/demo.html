@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="../libs/css/magnific-popup.css" rel="stylesheet">
+    <style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+        /*text-align: center;*/
+    }
+    /*.container {
+        width: 1170px;
+        height: 500px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0 auto;
+    }*/
+    
+    .container {
+        text-align: center; /*水平*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding: 0 8px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .container:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    /*.wrap {
+        width: 1170px;
+        height: 500px;
+        margin: 0 auto;
+    }*/
+    
+    .wrap {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 把注释打开 利用  vertical-align: middle;  display: table-cell; 可以=垂直居中但是要规定高度，*/
+    </style>
+</head>
+
+<body>
+    <!-- <div class="wrap"> -->
+        <div class="container">
+            <a class="image-popup-vertical-fit" href="./8589392310_7b6127e243_b.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+                <img src="./8589392310_7b6127e243_b.jpg" width="75" height="75">
+            </a>
+            <a class="image-popup-fit-width" href="./8588290361_ecf8c27021_b.jpg" title="This image fits only horizontally.">
+                <img src="./8588290361_ecf8c27021_b.jpg" width="75" height="75">
+            </a>
+            <a class="image-popup-no-margins" href="./9207329484_ba28755ec4_o.jpg">
+                <img src="./9207329484_ba28755ec4_o.jpg" width="107" height="75">
+            </a>
+        </div>
+    <!-- </div> -->
+    <script type="text/javascript" src="../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../libs/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+
+        });
+
+        $('.image-popup-fit-width').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            image: {
+                verticalFit: false
+            }
+        });
+
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
+
+    });
+    </script>
+</body>
+
+</html>

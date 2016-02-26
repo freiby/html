@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="../libs/css/magnific-popup.css" rel="stylesheet">
+    <style type="text/css">
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #5A6064;
+    }
+    
+    .white-popup-block {
+        background: #FFF;
+        padding: 20px 30px;
+        text-align: left;
+        max-width: 650px;
+        margin: 40px auto;
+        position: relative;
+    }
+    
+    .mfp-content {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        text-align: left;
+        z-index: 1045;
+    }
+    
+    .mfp-ajax-holder .mfp-content,
+    .mfp-inline-holder .mfp-content {
+        width: 100%;
+        cursor: auto;
+    }
+    
+    fieldset {
+        display: block;
+        -webkit-margin-start: 2px;
+        -webkit-margin-end: 2px;
+        -webkit-padding-before: 0.35em;
+        -webkit-padding-start: 0.75em;
+        -webkit-padding-end: 0.75em;
+        -webkit-padding-after: 0.625em;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        min-width: -webkit-min-content;
+        border: 2px groove threedface;
+    }
+    
+    blockquote,
+    body,
+    div,
+    fieldset,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    html,
+    iframe,
+    label,
+    legend,
+    li,
+    nav,
+    object,
+    ol,
+    p,
+    section,
+    table,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        margin-bottom: 5px;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-weight: 400;
+        text-rendering: optimizelegibility;
+        color: #282B30;
+        font-family: Calibri, "PT Sans", "Trebuchet MS", 'Helvetica Neue', Arial;
+    }
+    
+    ol,
+    ul {
+        padding: 0;
+        margin: 0 0 11px 25px;
+    }
+    
+    .mfp-close-btn-in .mfp-close {
+        color: #333;
+    }
+    
+    button.mfp-arrow,
+    button.mfp-close {
+        overflow: visible;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+        -webkit-appearance: none;
+        display: block;
+        outline: 0;
+        padding: 0;
+        z-index: 1046;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .mfp-close {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-decoration: none;
+        text-align: center;
+        opacity: .65;
+        filter: alpha(opacity=65);
+        padding: 0 0 18px 10px;
+        color: #FFF;
+        font-style: normal;
+        font-size: 28px;
+        font-family: Arial, Baskerville, monospace;
+    }
+    
+    .mfp-arrow,
+    .mfp-close,
+    .mfp-counter,
+    .mfp-preloader {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    code {
+        background: #F8F8F8;
+        padding: .1em .4em;
+        color: #c82829;
+        font-size: 13px;
+    }
+    
+    code,
+    pre {
+        font-family: Consolas, "Liberation Mono", Courier, monospace;
+    }
+    
+    code,
+    pre {
+        tab-size: 4;
+    }
+    
+    user agent stylesheettt,
+    code,
+    kbd,
+    samp {
+        font-family: monospace;
+    }
+    
+    p {
+        margin: 0 0 11px;
+    }
+    
+    li {
+        line-height: 22px;
+        margin: 0 0 .5em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="html-code">
+        <!-- link that opens popup -->
+        <a class="popup-with-form" href="#test-form">Open form</a>
+        <!-- form itself -->
+        <form id="test-form" class="white-popup-block mfp-hide">
+            <h1>Form</h1>
+            <fieldset style="border:0;">
+                <p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
+                <ol>
+                    <li>
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Name" required="">
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="example@domain.com" required="">
+                    </li>
+                    <li>
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="">
+                    </li>
+                    <li>
+                        <label for="textarea">Textarea</label>
+                        <br>
+                        <textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
+                    </li>
+                </ol>
+            </fieldset>
+        </form>
+
+        <br/>
+        <a class="popup-modal" href="#test-modal">Open modal</a>
+        <div id="test-modal" class="white-popup-block mfp-hide">
+            <h1>Modal dialog</h1>
+            <p>You won't be able to dismiss this by usual means (escape or click button), but you can close it programatically based on user choices or actions.</p>
+            <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../libs/js/jquery.js"></script>
+    <script type="text/javascript" src="../libs/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.popup-with-form').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#name',
+
+            // When elemened is focused, some mobile browsers in some cases zoom in
+            // It looks not nice, so we disable it:
+            callbacks: {
+                beforeOpen: function() {
+                    if ($(window).width() < 700) {
+                        this.st.focus = false;
+                    } else {
+                        this.st.focus = '#name';
+                    }
+                }
+            }
+        });
+    });
+
+
+    $(function() {
+        $('.popup-modal').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function(e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+    });
+    </script>
+</body>
+
+</html>

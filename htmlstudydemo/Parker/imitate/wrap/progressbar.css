@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-11-10 17:19:47
+ * @version $Id$
+ */
+/*------------------------------------------------------------------
+[Progress bars]
+*/
+
+.progress {
+	overflow: visible;
+	height: 2px;
+	margin-bottom: 30px;
+}
+
+.progress-title {
+	display: block;
+	margin: 0 0 15px;
+	font-size: 14px;
+}
+
+.progress-bar {
+	position: relative;
+}
+
+.progress-bar.progress-bar-def {
+	background: #cf9c63;
+}
+
+.progress-bar > span {
+	position: absolute;
+	display: block;
+	top: -35px;
+	right: 0;
+	font-size: 13px;
+	color: #565656;
+}
