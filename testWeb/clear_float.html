@@ -39,6 +39,39 @@
 .c:after{
 	clear: both;
 }
+
+li {
+        display: inline;
+    }
+
+ ul.right{
+ 	float: right;
+ }
+
+ ul:after{
+ 	content: "";
+ 	display: block;
+ 	position: relative;
+ }
+ ul:after{
+ 	clear: both;
+ }
+
+ .right{
+ 	float: right;
+ }
+
+
+ .clearfix:after{
+ 	content: "";
+ 	display: block;
+ 	position: relative;
+ 	height: 100%;
+ }
+ .clearfix:after{
+ 	clear: both;
+ }
+
 </style>
 </head>
 <body>
@@ -48,6 +81,13 @@
 			<div class="c">
 				aadfasssssssss
 			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<!-- <ul class="right"><li>aa</li><li>bb</li></ul> -->
+		<div class="right">
+			dfadf
 		</div>
 	</div>
     

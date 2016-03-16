@@ -9,6 +9,11 @@
     <meta name="keywords" content="">
     <link href="" rel="stylesheet">
     <style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+        border:none;
+    }
     a {
         text-decoration: none;
         font-weight: bold;
@@ -28,15 +33,16 @@
     }
     
     .t-a-f {
-        width: 300px;
-        height: 200px;
+        /*width: 90%;
+        height: 90%;*/
         background-color: #eee;
-        position: relative;
+        /*position: relative;
+        display: block;*/
         display: block;
+        position: relative;
     }
     
-    .t-a-f:after {
-        /*position: relative;*/
+    /*.t-a-f:after {
         display: block;
         position: relative;
         content: '';
@@ -45,11 +51,19 @@
         height: 100%;
         width: 100%;
         background-color: #510;
-    }
+    }*/
     
     .container {
-        width: 1170px;
-        height: 500px;
+        /*width: 1170px;
+        height: 500px;*/
+        position: relative;
+        display: block;
+        top: 120px;
+        /*overflow: auto;*/
+    }
+
+    img{
+
     }
     </style>
 </head>
@@ -60,9 +74,24 @@
         <a href="#">Team</a>
         <a href="#">Developers</a>
     </p>
+
+
+    <div><span style="font-size:50px">dfdafadsfad</span></div>
+
     <div class="container">
-        <div class="t-a-f"></div>
+        <div class="t-a-f">
+            <img src="portfolio-1.jpg" style="line-height: 532px;" class="imgp">
+        </div>
+        <div style="height:100%;width:100%;display: block;position: absolute"></div>
     </div>
+    <!-- <div>dsafffffff</div> -->
+
+    <script type="text/javascript">
+        var div = document.querySelector('.imgp');
+
+    </script>
+
+
 </body>
 
 </html>
