@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>aaaa</title>
+
+    <body>
+        <form id="feedbackform" action="j_security_check" method="post">
+            <div class="ui-field-contain">
+                <input type="text" name="j_username" id="name" value="" placeholder="用户名">
+            </div>
+            <div class="ui-field-contain">
+                <input type="password" name="j_password" id="start_date" placeholder="密码">
+            </div>
+            <button id="aaaaa">登录1</button>
+        </form>
+        <script type="text/javascript">
+        var a = document.getElementById("aaaaa");
+        a.onclick = function(e) {
+            var f = document.getElementById("feedbackform");
+            f.submit();
+            // $('#feedbackform').submit();
+        };
+        </script>
+        
+    </body>
+
+</html>

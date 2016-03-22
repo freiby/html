@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport"content="width=device-width, initial-scale=1"/>
+    <title>callcenterlog</title>
+    <meta name="description" content="callcenter log">
+    <meta name="keywords" content="log">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-static-side">
+            <div class="nav-header" id="side-menu">
+                <div class="profile-element">
+                    <div class="profile-center">
+                        <img src="images/logo.jpg" style="height:58px;width:58px;" class="img-circle" />
+                        <div>
+                            <strong class="font-bold"><span>log system</span></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group clear-list">
+                <li class="list-group-item fist-item">
+                    <a href="#"><span class="label label-success"><i class="fa fa-apple"></i></span> 播发日志列表 </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><span class="label label-info"><i class="fa fa-apple"></i></span> 操作日志列表 </a>
+                </li>
+            </ul>
+            <!-- <div style="height:1200px"></div> -->
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">欢迎</span>
+                        </li>
+                        <li>
+                            <a href="http://webapplayers.com/inspinia_admin-v2.3/login.html">
+                                <i class="fa fa-sign-out"></i> 退出
+                            </a>
+                        </li>
+                        <li>
+                            <a class="right-sidebar-toggle">
+                                <i class="fa fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row biz-content">
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>查询条件</h5> <span class="label label-primary">IN+</span>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="col-md-6">
+                                    <form class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-4 control-label">手机号</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-4 control-label">开始日期</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="date" class="form-control" id="inputsartdate" placeholder="start date" value="2016-02-07">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-4 control-label">结束日期</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="date" class="form-control" id="inputenddate" placeholder="end date" value="2016-02-07">
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                
+
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-4 control-label">频 道</label>
+                                                    <div class="col-sm-8">
+                                                        <!-- <input type="checkbox" name="pindao" value="1" class="one-row-one" /> -->
+                                                        <select class="form-control" id="inputquickdate">
+                                                            <option>无</option>
+                                                            <option>每日育儿</option>
+                                                            <option>每日育儿</option>
+                                                            <option>每日育儿</option>
+                                                            <option>每日育儿</option>
+                                                            <option>每日育儿</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-4 control-label">短信方式</label>
+                                                    <div class="col-sm-8 m-t-4">
+                                                        <input type="radio" name="huizhi" value="1" /> 回执+命令
+                                                        <input type="radio" name="huizhi" value="male" /> 未下发短信
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                
+                                            </div>
+                                            <div class="col-md-6">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <div class="monitor-operation"></div>
+                                        </div>
+                                        <div class="col-md-6 submit-container">
+                                            <button type="submit" class="btn btn-primary bt-operation ">查 询</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row biz-content">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <caption>播发日志列表</caption>
+                            <thead>
+                                <tr>
+                                    <th>上行/下行</th>
+                                    <th>回执下发状态</th>
+                                    <th>发送方</th>
+                                    <th>接受方</th>
+                                    <th class="content">消息内容</th>
+                                    <th>发送日期</th>
+                                    <th>所属地区</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>下行短信</td>
+                                    <td>普通</td>
+                                    <td>1065800711</td>
+                                    <td>13655554545</td>
+                                    <td class="content">将导航条内放置品牌标志的地方替换为 元素即可展示自己的品牌图标。由于已经被设置了内补（padding）和高度（height），你需要根据自己的情况添加一些 CSS 代码从而覆盖默认设置
+                                    </td>
+                                    <td>23/11/2013</td>
+                                    <td>CM_GUANGDONG</td>
+                                </tr>
+                                <tr>
+                                    <td>下行短信</td>
+                                    <td>普通</td>
+                                    <td>1065800711</td>
+                                    <td>13655554545</td>
+                                    <td class="content">将导航条内放置品牌标志的地方替换为 元素即可展示自己的品牌图标
+                                    </td>
+                                    <td>23/11/2013</td>
+                                    <td>CM_GUANGDONG</td>
+                                </tr>
+                                <tr>
+                                    <td>下行短信</td>
+                                    <td>普通</td>
+                                    <td>1065800711</td>
+                                    <td>13655554545</td>
+                                    <td class="content">两只大熊猫将赴韩，一只火辣霸道一只活泼胆小。3月3日，雄性大熊猫"园欣"与雌性大熊猫"华妮"将赴韩，开始为期15年的大熊猫国际科研合作。据悉，韩国已经为它们准备了3300平米的主题熊猫馆
+                                    </td>
+                                    <td>23/11/2013</td>
+                                    <td>CM_GUANGDONG</td>
+                                </tr>
+                                <tr>
+                                    <td>下行短信</td>
+                                    <td>普通</td>
+                                    <td>1065800711</td>
+                                    <td>13655554545</td>
+                                    <td class="content">将导航条内放置品牌标志的地方替换为 元素即可展示自己的品牌图标。由于已经被设置了内补（padding）和高度（height），你需要根据自己的情况添加一些 CSS 代码从而覆盖默认设置
+                                    </td>
+                                    <td>23/11/2013</td>
+                                    <td>CM_GUANGDONG</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav class="navbar navbar-pagination">
+                        <ul class="pagination pagination-sm pull-right">
+                            <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row biz-content">
+                	<div class="table-responsive">
+                		<table class="info table">
+                        <caption>详细信息</caption>
+                        <tbody>
+                            <tr>
+                                <td class="time">命令号:</td>
+                                <td>下行短信</td>
+                            </tr>
+                            <tr>
+                                <td class="time">工作站:</td>
+                                <td>CM_GUANGDONG</td>
+                            </tr>
+                            <tr>
+                                <td class="time">发送方:</td>
+                                <td>1065800711</td>
+                            </tr>
+                            <tr>
+                                <td class="time">接收方:</td>
+                                <td>13655554545</td>
+                            </tr>
+                            <tr>
+                                <td class="time">发送日期:</td>
+                                <td>23/11/2013</td>
+                            </tr>
+                            <tr>
+                                <td class="time">节点:</td>
+                                <td>NODE</td>
+                            </tr>
+                            <tr>
+                                <td class="time">格式:</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td class="time">关联号:</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="time">消息内容:</td>
+                                <td class="content-50">两只大熊猫将赴韩，一只火辣霸道一只活泼胆小。3月3日，雄性大熊猫"园欣"与雌性大熊猫"华妮"将赴韩，开始为期15年的大熊猫国际科研合作。据悉，韩国已经为它们准备了3300平米的主题熊猫馆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                	</div>
+                    
+                </div>
+            </div>
+            <div class="footer-wrapper">
+                <div class="footer row">
+                    <!--  page footer area begain  -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Copyright</strong> wxxr Company © 2015-2016</div>
+                            <div class="col-sm-4">
+                                <div class="footer-html5"><img src="./images/html5.png" style="width:32px;height:auto;margin-bottom:0px"></div>
+                            </div>
+                            <div class="col-sm-4 "><strong class="pull-right">callcenterlog</strong>.</div>
+                        </div>
+                    </div>
+                    <!-- <div class="pull-right">
+                    <strong>callcenterlog</strong>.
+                </div>
+                <div>
+                    <strong>Copyright</strong> wxxr Company © 2015-2016
+                </div>
+                <div class="footer-html5"><img src="./images/html5.png" style="width:32px;height:auto"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
