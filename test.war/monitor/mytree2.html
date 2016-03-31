@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>mytree demo</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <link rel="stylesheet" href="./themes/default/style1.css" />
+    <link rel="stylesheet" href="./font-awesome.css">
+    <style type="text/css">
+    .container {
+        /*text-align: center;*/
+    }
+    
+    .tree_nav {
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form id="s">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" id="e" name="optionsRadios" checked value="error" />error</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" id="w" name="optionsRadios" value="warn" />warn</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" id="o" name="optionsRadios" value="ok" />ok</label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+            <div class="col-md-4 tree_nav">
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="ss">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="e" name="optionsRadiosO" checked value="openall" />openall</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="w" name="optionsRadiosO" value="closeall" />closeall</label>
+                            </div>
+                            <button type="submit" class="btn btn-default">open</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form id="sss">
+                            <div class="radio">
+                                <input type="text" class="form-control" id="searchName" placeholder="请输入名称">
+                            </div>
+                            <button type="submit" class="btn btn-default">open</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#"><i class="icon-desktop"></i> desktop</a>
+        <a href="#"><i class="icon-laptop"></i> laptop</a>
+        <a href="#"><i class="icon-sitemap"></i> sitemap</a>
+        <a href="#"><i class="icon-ok-sign"></i> ok-sign</a>
+        <a href="#"><i class="icon-ok-circle"></i> ok-circle</a>
+        <a href="#"><i class="icon-question-sign"></i> question-sign</a>
+        <a href="#"><i class="icon-globe"></i> ok-globe</a>
+        <a href="#"><i class="icon-info-sign"></i> info-sign</a>
+        <a href="#"><i class="icon-warning-sign"></i> warning-sign</a>
+    </div>
+    <script src="./jquery.js"></script>
+    <script src="./jstree.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('.tree_nav').jstree({
+            "plugins": ["search"],
+            'core': {
+                'data': [{
+                    "text": "all",
+                    'monitorstate': 'error',
+                    'type': 'root',
+                    'typeclass': 'icon-sitemap ',
+                    'monitorsateclass': 'icon-exclamation-sign text-danger',
+                    "children": [{
+                        "text": "域",
+                        'type': 'domain',
+                        'typeclass': 'icon-cloud',
+                        'monitorsateclass': 'icon-exclamation-sign text-danger'
+                    }, {
+                        "text": "pc机",
+                        'monitorstate': 'error',
+                        'typeclass': 'icon-desktop',
+                        'monitorsateclass': 'icon-exclamation-sign text-danger',
+                        'type': 'pc',
+                        'children': [{
+                            'text': 'cpu',
+                            'monitorstate': 'ok',
+                            'type': 'terminal',
+                            'typeclass': 'icon-wrench',
+                            'monitorsateclass': 'icon-ok-sign text-success'
+                        }, {
+                            "text": "memory",
+                            'type': 'terminal',
+                            'monitorstate': 'warn',
+                            'typeclass': 'icon-wrench',
+                            'monitorsateclass': 'icon-warning-sign text-warning'
+                        }, {
+                            "text": "disk",
+                            'type': 'terminal',
+                            'monitorstate': 'error',
+                            'typeclass': 'icon-wrench',
+                            'monitorsateclass': 'icon-exclamation-sign text-danger'
+                        }]
+                    }]
+                }]
+            }
+        });
+
+        var $jstree = $(".tree_nav");
+        $jstree.on('activate_node.jstree Event', function(e, data) {
+            console.log(data.node.text);
+            alert("you selected ---> " + data.node.text);
+        });
+
+        $("#s").submit(function(e) {
+            e.preventDefault();
+            var val = $(':radio[name="optionsRadios"]:checked').val();
+            $(".tree_nav").jstree(true).search(val, 'monitorstate');
+        });
+
+        $("#ss").submit(function(e) {
+            e.preventDefault();
+            var val = $(':radio[name="optionsRadiosO"]:checked').val();
+            if (val === 'openall') {
+                // open all;
+                $(".tree_nav").jstree(true).open_all();
+            } else {
+                //close all;
+                $(".tree_nav").jstree(true).close_all();
+            }
+            
+        });
+
+        $("#sss").submit(function(e) {
+            e.preventDefault();
+            $(".tree_nav").jstree(true).search($('#searchName').val(),'text');
+
+        });
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="./bootstrap.css" rel="stylesheet">
+    <link href="./font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="jquery-jvectormap.css">
+    <link rel="stylesheet" type="text/css" href="begin.css">
+    <link rel="stylesheet" type="text/css" href="c3.css">
+    <style>
+    /*@css_start*/
+    
+    .jvectormap-legend-title {
+        font-size: 12px;
+    }
+    
+    .jvectormap-legend .jvectormap-legend-tick-sample {
+        height: 26px;
+    }
+    
+    .jvectormap-legend-icons {
+        background: white;
+        border: black 1px solid;
+    }
+    
+    .jvectormap-legend-icons {
+        color: black;
+    }
+    /*@css_end*/
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-default navbar-static-side" role="navigation">
+            <div class="nav-header" id="side-menu">
+                <div class="dropdown profile-element">
+                    <span style="padding-left: 20px;">
+                        <img alt="image" class="img-circle" style="height:48px;width:48px;" src="img/logo.jpg">
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <div class="clear">
+                            <div class="block m-t-xs"> <strong class="font-bold">dashboard system</strong></div>
+                            <!-- <div class="text-muted text-xs block">menu<b class="caret"></b></div> -->
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="report.html"><i class="fa fa-eye"></i><span class="text-muted">report</span></a></li>
+                        <li><a href="dashboard.html"><i class="fa fa-apple"></i><span class="text-muted">dashboard</span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://webapplayers.com/inspinia_admin-v2.3/login.html"><i class="fa fa-caret-square-o-right"></i><span class="text-muted">logout</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="wrapper-right">
+                <div class="btn-group btn-group-xs pull-right" role="group" aria-label="Extra-small button group">
+                    <button type="button" class="btn btn-default tool-bt danger"><i class="fa fa-times-circle text-danger"></i></button>
+                    <button type="button" class="btn btn-default tool-bt warn"><i class="fa fa-warning text-warning"></i></button>
+                    <button type="button" class="btn btn-default tool-bt open"><i class="fa fa-folder-open text-info"></i></button>
+                    <button type="button" class="btn btn-default tool-bt close"><i class="fa fa-close text-info"></i></button>
+                </div>
+            </div> -->
+            <ul class="list-group clear-list m-t">
+                <li class="list-group-item fist-item">
+                    <a href="#"><span class="label label-success"><i class="fa fa-apple"></i></span> dashboard v1</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><span class="label label-info"><i class="fa fa-apple"></i></span> dashboard v2</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><span class="label label-primary"><i class="fa fa-apple"></i></span> dashboard v3</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><span class="label label-default"><i class="fa fa-apple"></i></span> dashboard v4</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><span class="label label-primary"><i class="fa fa-apple"></i></span> dashboard v5</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <h4 class="showname"></h4>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Welcome</span>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="http://webapplayers.com/inspinia_admin-v2.3/profile.html" class="pull-left">
+                                            <img alt="image" class="img-circle" src="img/a7.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="pull-right">46h ago</small>
+                                            <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
+                                            <br>
+                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="http://webapplayers.com/inspinia_admin-v2.3/profile.html" class="pull-left">
+                                            <img alt="image" class="img-circle" src="img/a4.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="pull-right text-navy">5h ago</small>
+                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>.
+                                            <br>
+                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <a href="http://webapplayers.com/inspinia_admin-v2.3/profile.html" class="pull-left">
+                                            <img alt="image" class="img-circle" src="img/profile.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="pull-right">23h ago</small>
+                                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>.
+                                            <br>
+                                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="http://webapplayers.com/inspinia_admin-v2.3/mailbox.html">
+                                            <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <i class="fa fa-bell"></i> <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="http://webapplayers.com/inspinia_admin-v2.3/mailbox.html">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="http://webapplayers.com/inspinia_admin-v2.3/profile.html">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                            <span class="pull-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="http://webapplayers.com/inspinia_admin-v2.3/grid_options.html">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                            <span class="pull-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="http://webapplayers.com/inspinia_admin-v2.3/notifications.html">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://webapplayers.com/inspinia_admin-v2.3/login.html">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                        <li>
+                            <a class="right-sidebar-toggle">
+                                <i class="fa fa-tasks"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row biz-content">
+                    <div class="col-md-7">
+                        <div id="china-map" style="height:300px"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <table class="table table-hover margin bottom">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%" class="text-center">No.</th>
+                                    <th>Transaction</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td> sichuan
+                                    </td>
+                                    <td class="text-center small">16 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-success">483.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td> beijing
+                                    </td>
+                                    <td class="text-center small">10 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-success">327.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td> guangzhou
+                                    </td>
+                                    <td class="text-center small">12 Jun 2014</td>
+                                    <td class="text-center"><span class="label label-warning">125.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td> tianjing</td>
+                                    <td class="text-center small">22 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-success">344.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">5</td>
+                                    <td>wuhan</td>
+                                    <td class="text-center small">24 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-danger">235.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">6</td>
+                                    <td>jiangsu</td>
+                                    <td class="text-center small">26 Jun 2013</td>
+                                    <td class="text-center"><span class="label label-danger">100.00</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="memory" class="chartboard"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="area" class="chartboard"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>New data for the report</h5> <span class="label label-primary">IN+</span>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div>
+                                    <h4>NYS report new data!
+                                        <br/>
+                                        <small class="m-r"><a href="http://webapplayers.com/inspinia_admin-v2.3/graph_flot.html"> Check the stock price! </a> </small>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="biz-content-wrapper">
+                <div class="row biz-content">
+                    <!-- <div style="height:500px">loading content1 ....</div> -->
+                    <table class="log table">
+                        <caption>record</caption>
+                        <tbody>
+                            <tr class="info">
+                                <td class="time">11:01:43:</td>
+                                <td>Monitoring client has started</td>
+                            </tr>
+                            <tr class="info">
+                                <td class="time">9:34:13:</td>
+                                <td>Sample Web Transaction monitor on Online Marketplace: Alert 'E-mail to Administrator + Popup: Pop-up window' executed</td>
+                            </tr>
+                            <tr class="info">
+                                <td class="time">9:04:13:</td>
+                                <td>Sample Web Transaction monitor on Online Marketplace: Alert 'Popup: Pop-up window' executed</td>
+                            </tr>
+                            <tr class="info">
+                                <td class="time">9:04:13:</td>
+                                <td>Sample Web Transaction monitor on Online Marketplace: Warning: Time limit of 20 seconds exceeded</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="footer">
+                <!--  page footer area begain  -->
+                <div class="pull-right">
+                    10GB of <strong>250GB</strong> Free.
+                </div>
+                <div>
+                    <strong>Copyright</strong> Example Company © 2014-2015
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <script src="jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="jquery-jvectormap-cn-mill.js"></script>
+    <script src="jquery-jvectormap-world-mill-en.js"></script>
+    <script src="./d3.min.js"></script>
+    <script src="./c3.js"></script>
+    <script type="text/javascript">
+    // $('#side-menu').metisMenu();
+
+    // $(function(){
+    //      $("body").width($(window).width()).height($(window).height());
+    // });
+
+
+
+    $(function() {
+
+
+
+        function fix_height() {
+            var heightWithoutNavbar = $("body > .wrapper").height() - 61;
+            $(".sidebard-panel").css("min-height", heightWithoutNavbar + "px");
+
+            var navbarHeigh = $('nav.navbar-default').outerHeight();
+            var wrapperHeigh = $('#page-wrapper').outerHeight();
+
+            if (navbarHeigh > wrapperHeigh) {
+                $('#page-wrapper').css("min-height", navbarHeigh + "px");
+            }
+
+            if (navbarHeigh < wrapperHeigh) {
+                console.log("window outerHeight " + $(window).outerHeight() + " page outerHeight " + $('#page-wrapper').outerHeight());
+                console.log("window " + $(window).height() + " page " + $('#page-wrapper').height());
+
+                $('#page-wrapper').css("min-height", $(window).outerHeight() + "px");
+            }
+
+            if ($('body').hasClass('fixed-nav')) {
+                $('#page-wrapper').css("min-height", $(window).outerHeight() - 60 + "px");
+            }
+
+        }
+
+        // fix_height();
+
+        $(window).bind("load resize scroll", function() {
+            if (!$("body").hasClass('body-small')) {
+                fix_height();
+            }
+        });
+
+
+
+        $('.collapse-link').click(function() {
+            var ibox = $(this).closest('div.ibox');
+            var button = $(this).find('i');
+            var content = ibox.find('div.ibox-content');
+            content.slideToggle(200);
+            button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+            ibox.toggleClass('').toggleClass('border-bottom');
+            setTimeout(function() {
+                ibox.resize();
+                ibox.find('[id^=map-]').resize();
+            }, 50);
+        });
+
+
+
+
+        function createChart(data) {
+            var chart = c3.generate({
+                bindto: '#memory',
+
+                data: {
+                    x: 'x',
+                    xFormat: '%Y-%m-%d %H:%M:%S',
+                    columns: [
+                        ['x', '2004-01-01 10:10:2', '2005-02-01 08:10:2', '2006-03-01 10:50:02', '2007-04-01 00:10:2', '2008-05-01 12:10:2', '2009-06-01 10:10:2', '2010-07-01 10:45:2', '2011-08-01 15:10:2', '2012-09-01 10:55:2', '2013-10-01 10:10:2'], data
+                    ],
+                    type: 'bar'
+                },
+                axis: {
+                    y: {
+                        // type: 'category',
+                        max: 100,
+                        min: 10,
+                        categories: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100']
+                    },
+                    x: {
+                        type: 'timeseries',
+                        // if true, treat x value as localtime (Default)
+                        // if false, convert to UTC internally
+                        localtime: true,
+                        tick: {
+                            format: '%H:%M:%S'
+                        }
+                    }
+                },
+                color: {
+                    pattern: ['#23c6c8', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896', '#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7', '#bcbd22', '#dbdb8d', '#17becf', '#9edae5']
+                }
+            });
+            return chart;
+        };
+
+        createChart(['memory', 10, 15, 5, 41, 11, 25, 26, 33, 58, 69]);
+
+
+
+
+
+        function createPieChart(data) {
+            var chart = c3.generate({
+                bindto: '#area',
+                data: {
+                    columns: [
+                        ['department1', data[1]],
+                        ['department2', data[2]],
+                        ['department3', data[3]]
+                    ],
+                    type: 'pie',
+                    onclick: function(d, i) {
+                        console.log("onclick", d, i);
+                    },
+                    onmouseover: function(d, i) {
+                        console.log("onmouseover", d, i);
+                    },
+                    onmouseout: function(d, i) {
+                        console.log("onmouseout", d, i);
+                    }
+                },
+
+                color: {
+                    pattern: ['#23c6c8', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896', '#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7', '#bcbd22', '#dbdb8d', '#17becf', '#9edae5']
+                }
+            });
+            return chart;
+        };
+
+        createPieChart(['Area', 10, 15, 5, 41, 11, 25, 26, 33, 58, 69]);
+
+
+        //收起nav
+        // Minimalize menu
+
+        function SmoothlyMenu() {
+            if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
+                // Hide menu in order to smoothly turn on when maximize menu
+                $('body .navbar-static-side').hide();
+                // For smoothly turn on menu
+                setTimeout(
+                    function() {
+                        $('body .navbar-static-side').fadeIn(500);
+                    }, 500);
+            } else if ($('body').hasClass('fixed-sidebar')) {
+                $('#side-menu').hide();
+                setTimeout(
+                    function() {
+                        $('#side-menu').fadeIn(500);
+                    }, 300);
+            } else {
+                // Remove all inline style from jquery fadeIn function to reset menu state
+                $('body .navbar-static-side').removeAttr('style');
+            }
+        };
+
+        $('.navbar-minimalize').click(function() {
+            $("body").toggleClass("mini-navbar");
+            SmoothlyMenu();
+        });
+
+
+
+    });
+
+
+
+
+
+    $(function() {
+
+
+        $('#china-map').vectorMap({
+            map: 'cn_mill',
+            scaleColors: ['#33FFCC', '#FF3366'],
+            normalizeFunction: 'polynomial',
+            hoverOpacity: 0.7,
+            hoverColor: false,
+            markerStyle: {
+                initial: {
+                    fill: '#FF0000',
+                    stroke: '#383f47'
+                }
+            },
+            backgroundColor: 'transparent',
+            regionStyle: {
+                initial: {
+                    fill: '#e4e4e4',
+                    "fill-opacity": 0.9,
+                    stroke: 'none',
+                    "stroke-width": 0,
+                    "stroke-opacity": 0
+                }
+            },
+            series: {
+                // markers: [{
+                //     attribute: 'fill',
+                //     scale: ['#ff0000', '#00ff00'],
+                //     normalizeFunction: 'polynomial',
+                //     values: [408, 512, 550, 800],
+                //     legend: {
+                //         vertical: true
+                //     }
+                // }],
+                regions: [{
+                    scale: {
+                        red: '#ff0000',
+                        green: '#00ff00',
+                        r_g: '#858E00'
+
+                    },
+                    attribute: 'fill',
+                    values: {
+                        "CN-65": 'red',
+                        "CN-34": 'red',
+                        "CN-43": 'green',
+                        "CN-51": 'r_g',
+                        "CN-14": 'r_g'
+                    },
+                    legend: {
+                        horizontal: true,
+                        title: 'Oil Value',
+                        labelRender: function(v) {
+                            return {
+                                red: 'low',
+                                green: 'high',
+                                r_g: 'normal'
+                            }[v];
+                        }
+                    }
+                }]
+            },
+            onRegionClick: function(e, code){
+                console.log('selected region ' + code);
+            }
+
+        });
+
+        // new jvm.MultiMap({
+        //     container: $('#china-map'),
+        //     // map: 'cn_mill',
+
+        //     maxLevel: 1,
+        //     main: {
+        //         map: 'cn_mill',
+        //         scaleColors: ['#33FFCC', '#FF3366'],
+        //         normalizeFunction: 'polynomial',
+        //         hoverOpacity: 0.7,
+        //         hoverColor: false,
+        //         markerStyle: {
+        //             initial: {
+        //                 fill: '#FF0000',
+        //                 stroke: '#383f47'
+        //             }
+        //         },
+        //         backgroundColor: 'transparent',
+        //         regionStyle: {
+        //             initial: {
+        //                 fill: '#e4e4e4',
+        //                 "fill-opacity": 0.9,
+        //                 stroke: 'none',
+        //                 "stroke-width": 0,
+        //                 "stroke-opacity": 0
+        //             }
+        //         },
+
+        //         // markers: [{
+        //         //     latLng: [39.54, 116.23],
+        //         //     name: 'beijing'
+        //         // }],
+        //         series: {
+        //             markers: [{
+        //                 attribute: 'fill',
+        //                 scale: ['#ff0000', '#00ff00'],
+        //                 normalizeFunction: 'polynomial',
+        //                 values: [408, 512, 550, 800],
+        //                 legend: {
+        //                     vertical: true
+        //                 }
+        //             }],
+        //             regions: [{
+        //                     scale: {
+        //                         red: '#ff0000',
+        //                         green: '#00ff00',
+        //                         r_g: '#858E00'
+
+        //                     },
+        //                     attribute: 'fill',
+        //                     values: {
+        //                         "CN-65": 'red',
+        //                         "CN-34": 'red',
+        //                         "CN-43": 'green',
+        //                         "CN-51": 'r_g',
+        //                         "CN-14": 'r_g'
+        //                     },
+        //                     legend: {
+        //                         horizontal: true,
+        //                         title: 'Oil Value',
+        //                         labelRender: function(v) {
+        //                             return {
+        //                                 red: 'low',
+        //                                 green: 'high',
+        //                                 r_g: 'normal'
+        //                             }[v];
+        //                         }
+        //                     }
+        //                 },
+        //                 // {
+        //                 //     scale: {
+        //                 //         redGreen: 'img/bg-red-green.png',
+        //                 //         yellowBlue: 'img/bg-yellow-blue.png'
+        //                 //     },
+        //                 //     values: {
+        //                 //         "CN-32": 'redGreen',
+        //                 //         "CN-52": 'yellowBlue'
+        //                 //     },
+        //                 //     attribute: 'fill',
+        //                 //     legend: {
+        //                 //         horizontal: true,
+        //                 //         cssClass: 'jvectormap-legend-bg',
+        //                 //         title: 'Pattern',
+        //                 //         labelRender: function(v) {
+        //                 //             return {
+        //                 //                 redGreen: 'low',
+        //                 //                 yellowBlue: 'high'
+        //                 //             }[v];
+        //                 //         }
+        //                 //     }
+        //                 // }
+        //             ]
+        //         }
+        //     },
+        //     mapUrlByCode: function(code, multiMap) {
+        //         if (code == 'CN-11')
+        //             return 'jquery-jvectormap-' +
+        //                 code.toLowerCase() + '.js';
+        //     }
+        // });
+
+
+        // $('#china-map').vectorMap({
+        //     map: 'cn_mill',
+        //     series: {
+        //         regions: [{
+        //             // values: gdpData,
+        //             scale: ['#C8EEFF', '#0071A4'],
+        //             normalizeFunction: 'polynomial'
+        //         }]
+        //     },
+        //     onRegionTipShow: function(e, el, code) {
+        //         el.html(el.html());
+        //     }
+        // });
+
+
+        // var mapData = {
+        //         "US": 298,
+        //         "SA": 200,
+        //         "DE": 220,
+        //         "FR": 540,
+        //         "CN": 120,
+        //         "AU": 760,
+        //         "BR": 550,
+        //         "IN": 200,
+        //         "GB": 120,
+        //     };
+
+        // $('#china-map').vectorMap({
+        //     map: 'world_mill_en',
+        //     backgroundColor: "transparent",
+        //     regionStyle: {
+        //         initial: {
+        //             fill: '#e4e4e4',
+        //             "fill-opacity": 0.9,
+        //             stroke: 'none',
+        //             "stroke-width": 0,
+        //             "stroke-opacity": 0
+        //         }
+        //     },
+
+        //     series: {
+        //         regions: [{
+        //             values: mapData,
+        //             scale: ["#1ab394", "#22d6b1"],
+        //             normalizeFunction: 'polynomial'
+        //         }]
+        //     },
+        // });
+    }); // end $function()
+    </script>
+</body>
+
+</html>
