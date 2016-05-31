@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title> New Document </title>
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <style type="">
+        .ace-file-input { display: block; font-size: inherit; position: relative; height: 30px; } 
+        .ace-file-input input[type=file] { /* position: absolute; */ width: 0; height: 0; }
+        .ace-file-input .ace-file-container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: #FFF;
+  border: 1px solid #D5D5D5;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.ace-file-input .ace-file-container:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #F59942;
+}
+.ace-file-input .ace-file-container:before {
+  display: inline-block;
+  content: attr(data-title);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 24px;
+  text-align: center;
+  padding: 0 8px;
+  background-color: #6FB3E0;
+  color: #FFF;
+  font-size: 11px;
+  font-weight: bold;
+  border: 2px solid #FFF;
+  border-left-width: 4px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ace-file-input .ace-file-container .ace-file-name {
+  display: inline-block;
+  height: 28px;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 28px;
+  color: #888;
+  font-size: 13px;
+  vertical-align: top;
+  position: static;
+  padding-left: 30px;
+}
+.ace-file-input .ace-file-container .ace-file-name:after {
+  display: inline-block;
+  content: attr(data-title);
+}
+.ace-file-input .ace-file-container.selected {
+  right: 16px;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name {
+  color: #666;
+}
+.ace-file-input .ace-file-container .ace-icon {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 24px;
+  width: 26px;
+  text-align: center;
+  font-family: FontAwesome;
+  font-size: 13px;
+  border: 2px solid #FFF;
+  color: #FFF;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  background-color: #D1D1D1;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name .ace-icon {
+  background-color: #EFAD62;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name .file-image {
+  background-color: #BD7A9D;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name .file-video {
+  background-color: #87B87F;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name .file-audio {
+  background-color: #8B7AC9;
+}
+.ace-file-input .ace-file-container.selected .ace-file-name .file-archive {
+  background-color: #EFAD62;
+}
+.ace-file-input .ace-file-container.hide-placeholder:before {
+  display: none;
+}
+.ace-file-input a:hover {
+  text-decoration: none;
+}
+.ace-file-input .remove {
+  position: absolute;
+  right: -8px;
+  top: 6px;
+  display: none;
+  width: 17px;
+  text-align: center;
+  height: 17px;
+  line-height: 15px;
+  font-size: 11px;
+  font-weight: normal;
+  background-color: #FB7142;
+  border-radius: 100%;
+  color: #FFF;
+  text-decoration: none;
+}
+.ace-file-input .ace-file-container.selected + .remove {
+  display: inline-block;
+}
+    </style>
+</head>
+
+<body>
+    
+        <input type="file" id="id-input-file-2" multiple>
+
+
+        <div>
+          
+
+          <label class="ace-file-input"><input type="file" id="id-input-file-2"><span class="ace-file-container" data-title="Choose"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon fa fa-upload"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label>
+
+          
+        </div>
+</body>
+
+</html>

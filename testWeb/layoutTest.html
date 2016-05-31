@@ -7,6 +7,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
+
 <style type="text/css">
 	div{
 		margin: 0;
@@ -22,6 +23,30 @@
 	</div>
 
 	<div style="height:100px;background-color: red"></div>
+
+	<div class="container">
+		
+		<div class="children"></div>
+
+	</div>
+
+	<button>change</button>
     
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+     <script type="text/javascript" src="jquery.ba-resize.js"></script>
+    <script type="text/javascript">
+    	$('.container').resize(function(){
+    		alert("ok");
+    	});
+    	$('button').click(function(){
+    		$('.children').height('500');
+    	});
+
+    	$(window).resize(function(){
+    		alert("ok");
+    	});
+    	
+
+    </script>
 </body>
 </html>

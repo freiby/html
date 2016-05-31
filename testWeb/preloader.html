@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>preloader</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="./preloader.css">
+    <script type="text/javascript" src="./jquery-1.11.2.js"></script>
+    <style type="text/css">
+    /*body{
+    		background-color: #CCCCCC;
+    	}*/
+    </style>
+</head>
+
+<body>
+    <div id="ish-site-preloader-holder" class="ish-site-preloader-holder">
+        <div class="ish-site-preloader-content">
+            <div class="ish-site-preloader">
+                <div class="ish-loader">
+                    <div class="ish-flipper">
+                        <div class="ish-front"></div>
+                        <div class="ish-back"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ish-site-preloader-text">Loading...</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    /* *********************************************************************************************************************
+     * Global namespace "ish"
+     */
+    if (ish == null || typeof(ish) !== "object") {
+        var ish = {}
+    }
+
+    /* *****************************************************************************************************************
+     * function_exists() definition
+     */
+    function function_exists(name) {
+        return ('function' === eval('typeof ish.' + name));
+    }
+
+    // setTimeout(function() {
+    //     document.getElementById("ish-site-preloader-holder").style.display = 'none';
+    // }, 5000);
+
+    jQuery(document).ready(function($) {
+        if (!function_exists('activate_site_preloader')) {
+            ish.activate_site_preloader = function() {
+                var site_preloader = jQuery('.ish-site-preloader-holder');
+                if (site_preloader.length > 0) {
+                    site_preloader.fadeIn(250);
+                }
+            }
+        }
+
+        if (!function_exists('deactivate_site_preloader')) {
+            ish.deactivate_site_preloader = function() {
+                var site_preloader = jQuery('.ish-site-preloader-holder');
+                if (site_preloader.length > 0) {
+                    // site_preloader.fadeOut(250);
+                }
+            }
+        }
+
+
+        jQuery(window).load(function() {
+            // Do not add code here. This event triggers after ALL JavaScripts have loaded
+            ish.deactivate_site_preloader();
+
+        });
+
+    });
+    </script>
+</body>
+
+</html>

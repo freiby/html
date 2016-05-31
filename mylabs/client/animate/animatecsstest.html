@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>animate</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="../libs/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="../libs/css/animate.css">
+<style type="text/css">
+	#container{
+		background-color: red;
+	}
+</style>
+<script type="text/javascript">
+	function actionOut(){
+		$('#container').addClass('animated bounceOutLeft');
+	}
+
+	function actionIn(){
+		$('#container').removeClass('animated bounceOutLeft');
+		$('#container').addClass('animated bounceInLeft');
+	}
+</script>
+
+</head>
+<body>
+    <div id="container" style="width:500px; height:500px">
+    	
+    </div>
+    <button onclick="actionOut();">action</button><button onclick="actionIn();">action</button>
+</body>
+</html>
