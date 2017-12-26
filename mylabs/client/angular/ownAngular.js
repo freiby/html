@@ -12,6 +12,7 @@ function Scope() {
   this.$$phase = null;
 }
 
+
 Scope.prototype.$beginPhase = function(phase) {
   if (this.$$phase) {
     throw this.$$phase + ' already in progress.';
