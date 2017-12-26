@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"/>
+	
+	<settings>
+        <!-- lazyLoadingEnabled:延迟加载启动，默认是false -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- aggressiveLazyLoading：积极的懒加载，false的话按需加载，默认是true -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+         
+        <!-- 开启二级缓存，默认是false -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+	
+	<typeAliases>
+		<!-- <typeAlias type="com.test.User" alias="_User"/> -->
+		<package name="com.test"/>
+	</typeAliases>
+    
+
+	
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${name}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+
+	
+
+    <mappers>
+        <!-- 注册userMapper.xml文件， 
+        userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml-->
+        <mapper resource="com/test/userMapper.xml"/>
+		<mapper resource="com/test/orderMapper.xml"/>
+		<mapper resource="com/test/classMapper.xml"/>
+        <!-- 注册UserMapper映射接口-->
+		<mapper class="com.test.UserMapperI"/>
+
+
+		
+    </mappers>
+    
+</configuration>

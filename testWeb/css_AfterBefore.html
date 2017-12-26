@@ -8,12 +8,63 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="" rel="stylesheet">
-    <style type="text/css" media="screen">
-        a { text-decoration: none; 
-        	font-weight: bold; color: #000; } 
-        a:after { content: " /"; } 
-        a:first-child:before { content: " » "; } 
-        a:last-child:after { content: ""; }
+    <style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+        border:none;
+    }
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    a:after {
+        content: " /";
+    }
+    
+    a:first-child:before {
+        content: " » ";
+    }
+    
+    a:last-child:after {
+        content: "";
+    }
+    
+    .t-a-f {
+        /*width: 90%;
+        height: 90%;*/
+        background-color: #eee;
+        /*position: relative;
+        display: block;*/
+        display: block;
+        position: relative;
+    }
+    
+    /*.t-a-f:after {
+        display: block;
+        position: relative;
+        content: '';
+        top: 0px;
+        left: 100px;
+        height: 100%;
+        width: 100%;
+        background-color: #510;
+    }*/
+    
+    .container {
+        /*width: 1170px;
+        height: 500px;*/
+        position: relative;
+        display: block;
+        top: 120px;
+        /*overflow: auto;*/
+    }
+
+    img{
+
+    }
     </style>
 </head>
 
@@ -23,6 +74,24 @@
         <a href="#">Team</a>
         <a href="#">Developers</a>
     </p>
+
+
+    <div><span style="font-size:50px">dfdafadsfad</span></div>
+
+    <div class="container">
+        <div class="t-a-f">
+            <img src="portfolio-1.jpg" style="line-height: 532px;" class="imgp">
+        </div>
+        <div style="height:100%;width:100%;display: block;position: absolute"></div>
+    </div>
+    <!-- <div>dsafffffff</div> -->
+
+    <script type="text/javascript">
+        var div = document.querySelector('.imgp');
+
+    </script>
+
+
 </body>
 
 </html>

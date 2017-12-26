@@ -6,5 +6,50 @@
    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
    id="WebApp_ID" version="3.0">
    
-    
+    <servlet>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.wxxr.callcenterlog.TestServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Test1</servlet-name>
+		<servlet-class>com.wxxr.callcenterlog.TestServletRedirect</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Test1</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>admin page</web-resource-name>
+			<url-pattern>/wxxr-web/mindex.html</url-pattern>
+		</web-resource-collection>
+		
+		<web-resource-collection>
+			<web-resource-name>admin page</web-resource-name>
+			<url-pattern>/wxxr-web/info.html</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>client</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/wxxr-web/mlogin.html</form-login-page>
+			<form-error-page>/wxxr-web/login-error.html</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
 </web-app>

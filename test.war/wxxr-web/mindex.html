@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.css"></link>
+    <link rel="stylesheet" href="./css/mmain.css"></link>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="./js/jquery.jsonrpcclient.js"></script>
+    <script type="text/javascript" src="./js/jquery.rpc.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="queryList">
+        <div data-role="header">
+            <h1>callceterLog</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active">播发日志列表</a></li>
+                    <li><a href="#">操作日志列表</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content">
+            <form id="feedbackform">
+                <div class="ui-field-contain">
+                    <label for="name">手机号:</label>
+                    <input type="text" name="mobilenumber" id="name" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="textarea">开始日期:</label>
+                    <input type="date" name="sdate" id="start_date" value="">
+                    </textarea>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="textarea">结束日期:</label>
+                    <input type="date" name="edate" id="start_date" value="">
+                    </textarea>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="select-native-fc">频道:</label>
+                    <select name="pindao" id="select-native-fc">
+                        <option value="small">无</option>
+                        <option value="medium">育儿</option>
+                        <option value="large">体育</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup">
+                        <legend>短信方式</legend>
+                        <input type="radio" name="smsmethod" id="radio-choice-1" value="choice-1" checked="checked">
+                        <label for="radio-choice-1">回执+命令</label>
+                        <input type="radio" name="smsmethod" id="radio-choice-2" value="choice-2">
+                        <label for="radio-choice-2">未下发短信</label>
+                    </fieldset>
+                </div>
+                <button id="submitbtn" class="ui-shadow ui-btn ui-corner-all">查询1</button>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4>wxxr</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <script type="text/javascript">
+    // alert('excute');
+    (function($) {
+            $(function() {
+
+
+                    if(window.parent.document != null && window.parent['loginSuccess'] !== undefined){
+                        window.parent.loginSuccess();
+                    }
+                    Date.prototype.format = function(format) {
+                        var date = {
+                            "M+": this.getMonth() + 1,
+                            "d+": this.getDate(),
+                            "h+": this.getHours(),
+                            "m+": this.getMinutes(),
+                            "s+": this.getSeconds(),
+                            "q+": Math.floor((this.getMonth() + 3) / 3),
+                            "S+": this.getMilliseconds()
+                        };
+                        if (/(y+)/i.test(format)) {
+                            format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+                        }
+                        for (var k in date) {
+                            if (new RegExp("(" + k + ")").test(format)) {
+                                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+                            }
+                        }
+                        return format;
+                    }
+
+
+
+                    
+
+
+                        var currentView = 1; params = [];
+                        var currentDate; $("#submitbtn").click(function(e) {
+                            // alert('submitbtn');
+                            console.log($('body').height());
+                            console.log($('body').innerHeight());
+                            params.splice(0, params.length);
+                            var bean = {};
+                            bean.booleanField = true;
+                            bean.stringField = 'test';
+                            bean.intField = 10;
+                            bean.charField = 's';
+                            bean.doubleField = 10.1;
+                            bean.byteField = 3;
+                            var map = {};
+                            map.a = "1";
+                            map.c = [1.0, 2.0];
+                            var array = ["str0", "str1"];
+                            // params.push(bean);
+                            // params.push(map);
+                            // params.push(array);
+                            params.push(13651129876);
+                            params.push('2016-01-01');
+                            params.push('2016-03-01');
+                            params.push('ye');
+                            params.push(1);
+                            params.push(1);
+                            params.push(3);
+                            console.log("============================start rpc==========================");
+                            $.invorkRpc('test.do', 'queryList', params, true, function(result) {
+                                console.log('success');
+                                currentDate = result;
+                                $.mobile.changePage("./list.html");
+                            }, function(error) {
+                                console.log('error');
+                            });
+                            return false;
+                        });
+
+                        /*
+                            list view
+                        */
+
+                        function makeHtmlItem(item) {
+                            var li = $("<li class='ui-first-child ui-last-child'></li>");
+                            var lia = $("<a href='info.html'  data-transition='pop' class='ui-btn ui-btn-icon-right ui-icon-carat-r'></a>");
+                            li.append(lia);
+                            var h2 = $('<h2>' + item.type + '</h2>');
+                            var p = $('<p>' + item.mesg + '</p>');
+                            var d = new Date(item.date);
+                            var time = d.format('yyyy-mm-dd');
+                            var s = $("<p class='ui-li-aside'><strong>" + item.date + "</strong></p>");
+                            lia.append(h2).append(p).append(s);
+                            return li;
+                        }
+
+                        function doList(result) {
+                            var uicontent = $('#list .ui-content');
+                            var ul = $("<ul data-role='listview' data-inset='true' class='ui-listview ui-listview-inset ui-corner-all ui-shadow'></ul>");
+                            uicontent.append(ul);
+                            for (var i = 0; i < result.length; i++) {
+                                var itemhtml = makeHtmlItem(result[i]);
+                                ul.append(itemhtml);
+                            }
+                        }
+
+                        $(document).on("pageshow", "#queryList", function() {
+
+                            currentView = 1;
+                        });
+
+                        $(document).on("pageshow", "#list", function() {
+                            if (currentView == 3) {
+                                currentView = 2;
+                                return;
+                            }
+                            var uicontent = $('#list .ui-content');
+                            uicontent.empty();
+                            doList(currentDate);
+                            makePagination(8);
+                            currentView = 2;
+                        });
+
+                        var currentPage = 1;
+                        var pagesCount = 0;
+                        var lpage = 0;
+                        var count = 8;
+                        var maxCount = false;
+                        var minCount = false;
+                        var currentTarget;
+
+                        function makePagination(pages) {
+                            $('.pageitem').remove();
+                            pagesCount = Math.ceil(pages / 5);
+                            lpage = pages % 5;
+                            makePageItem(currentPage);
+                            $('.pagination .next a').on('click', function(e) {
+                                if (maxCount) return;
+                                $('.pageitem').remove();
+                                makePageItem(currentPage + 1);
+                                currentPage = currentPage + 1;
+                                minCount = false;
+                            });
+                            $('.pagination .prev a').on('click', function(e) {
+                                if (minCount) return;
+                                $('.pageitem').remove();
+                                makePageItem(currentPage - 1);
+                                currentPage = currentPage - 1;
+                                maxCount = false
+                                if (currentPage == 1) {
+                                    minCount = true;
+                                }
+                            });
+
+                        }
+
+                        var currentCount = 1;
+
+                        function showPage(event) {
+                            var target = event.target;
+                            var value = $(target).text();
+                            if (currentCount != value) {
+                                params.splice(0, params.length)
+                                var bean = {};
+                                bean.booleanField = true;
+                                bean.stringField = 'test';
+                                bean.intField = 10;
+                                bean.charField = 's';
+                                bean.doubleField = 10.1;
+                                bean.byteField = 3;
+                                var map = {};
+                                map.a = "1";
+                                map.c = [1.0, 2.0];
+                                var array = ["str0", "str1"];
+                                // params.push(bean);
+                                // params.push(map);
+                                // params.push(array);
+                                params.push(13651129876);
+                                params.push('2016-01-01');
+                                params.push('2016-03-01');
+                                params.push('ye');
+                                params.push(1);
+                                params.push(value);
+                                params.push(3);
+
+
+
+                                $.invorkRpc('test.do', 'queryList', params, true, function(result) {
+                                    console.log('success');
+                                    currentDate = result;
+                                    var uicontent = $('#list .ui-content');
+                                    uicontent.empty();
+                                    doList(currentDate);
+                                }, function(error) {
+                                    console.log('error');
+                                });
+                            }
+                            currentCount = value
+                            makeActive(target);
+                        }
+
+                        function makeActive(target) {
+                            if (currentTarget != null)
+                                $(currentTarget).removeClass('pageActive');
+                            $(target).addClass('pageActive');
+                            currentTarget = target;
+                        }
+
+                        function makePageItem(page) {
+                            var container = $("div[data-role='footer']>.navbar>.pagination .prev");
+                            if (pagesCount == page) {
+                                for (var i = currentPage * 5 + lpage; i > (count - lpage); i--) {
+                                    var item = $("<li><a href='#' class='ui-btn ui-btn-inline pageitem'>" + i + "</a></li>");
+                                    container.after(item);
+                                    item.find('a').on('click', showPage);
+                                    maxCount = true;
+                                }
+                            } else {
+                                for (var i = page * 5; i > (page - 1) * 5; i--) {
+                                    var item = $("<li><a href='#' class='ui-btn ui-btn-inline pageitem'>" + i + "</a></li>");
+                                    item.find('a').on('click', showPage);
+                                    container.after(item);
+                                }
+                            }
+
+
+                        }
+
+
+
+                        /*
+                            info
+                        */
+
+                        $(document).on("pageshow", function(event) {
+                            var $target = $(event.target);
+                            var $dailog = $target.find('#dialog-info');
+                            if ($dailog.length > 0) {
+                                // alert('dailog');
+                                currentView = 3;
+                            }
+                            // alert('ok');
+                            // var uicontent = $('#list .ui-content');
+                            // uicontent.empty();
+                            // doList(currentDate);
+                            // makePagination(8);
+                        });
+
+                    });
+
+
+            })(jQuery);
+    </script>
+</body>
+
+</html>

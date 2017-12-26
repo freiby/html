@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-11-10 16:07:53
+ * @version $Id$
+ */
+/*------------------------------------------------------------------
+[Modules]
+*/
+
+.wrapper {
+	background: #fff;
+	position: relative;
+	width: 100%;
+	z-index: 3;
+}
+
+.module,
+.module-sm,
+.footer {
+	padding: 140px 0;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+}
+
+.module-sm {
+	padding: 70px 0;
+}
+
+.footer {
+	background-color: #111;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
+.module-map {
+	position: relative;
+	overflow: hidden;
+	height: 450px;
+	width: 100%;
+}
+
+.module-parallax{
+	background-attachment: fixed;
+}
+
+.module-title,
+.module-subtitle {
+	margin: 0 0 70px;
+	text-align: center;
+	line-height: 1.8;
+	font-size: 30px;
+}
+
+.module-subtitle {
+	font-size: 18px;
+	color: #999;
+}
+
+.module-title + .module-subtitle {
+	margin-top: -35px;
+}
+
+.module.module-w,
+.module-sm.module-w {
+	background-color: #fff;
+}
+
+.module.module-g,
+.module-sm.module-g {
+	background-color: #f7f7f7;
+}
+
+.navbar-custom + .wrapper .module:first-child {
+	padding-top: 210px;
+}
+
+.navbar-custom + .wrapper .module-sm:first-child {
+	padding-top: 140px;
+}
+
+@media (max-width: 767px) {
+
+	.footer {
+		position: relative;
+	}
+
+}

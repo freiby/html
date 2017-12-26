@@ -24,6 +24,7 @@ Scope.prototype.$clearPhase = function() {
   this.$$phase = null;
 };
 
+// 注册 监测
 Scope.prototype.$watch = function(watchFn, listenerFn, valueEq) {
   var self = this;
   var watcher = {
@@ -50,6 +51,7 @@ Scope.prototype.$$areEqual = function(newValue, oldValue, valueEq) {
   }
 };
 
+// 先计算一遍看看是否有无脏数据
 Scope.prototype.$$digestOnce = function() {
   var self  = this;
   var dirty;
@@ -69,6 +71,7 @@ Scope.prototype.$$digestOnce = function() {
   return dirty;
 };
 
+//计算
 Scope.prototype.$digest = function(){
   var ttl = 10;
   var dirty;
@@ -99,10 +102,13 @@ Scope.prototype.$digest = function(){
   }
 };
 
+//外部可以在 context 环境里面运算
 Scope.prototype.$eval = function(expr, locals) {
   return expr(this, locals);
 };
 
+
+//应用
 Scope.prototype.$apply = function(expr) {
   try {
     this.$beginPhase("$apply");
@@ -113,6 +119,7 @@ Scope.prototype.$apply = function(expr) {
   }
 };
 
+//异步方法执行
 Scope.prototype.$evalAsync = function(expr) {
   var self = this;
   if (!self.$$phase && !self.$$asyncQueue.length) {
